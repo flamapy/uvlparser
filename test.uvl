@@ -1,15 +1,15 @@
 features
-    Server
+    Server { abstract }
         mandatory
             FileSystem
                 or
                     NTFS
                     APFS
                     EXT4
-            OperatingSystem
+            OperatingSystem { abstract }
                 alternative
                     Windows
                     macOS
                     Debian
         optional
-            Logging
+            Logging{default,log_level"warn"}

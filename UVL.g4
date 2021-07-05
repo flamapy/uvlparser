@@ -36,7 +36,14 @@ feature_model: features?;
 features: 'features' child;
 
 // every child will consist on a feature word, followed by an indent and a set of relationships.
-child: FEATURE INDENT relationship+ DEDENT;
+child: feature_spec INDENT relationship+ DEDENT;
+
+feature_spec: ref attributes?;
+ref: (WORD '.')* WORD;
+attributes: '{}' | '{' attribute (',' attribute)* '}';
+attribute: key value?;
+key: WORD;
+value: '"' WORD '"';
 
 // every relationship will consist on a keyword, followed by an indent and a set of children
 relationship: KEYWORD INDENT child+ DEDENT;
@@ -55,7 +62,7 @@ KEYWORD:
 		| 'mandatory'
 	);
 
-FEATURE: [a-zA-Z][0-9a-zA-Z_]*;
+WORD: [a-zA-Z][0-9a-zA-Z_]*;
 
-NL: ('\r'? '\n' (' '*));
-WS: [ \t\n] -> skip;
+WS: [ \n\r\t]+ -> skip;
+NL: ('\r'? '\n' '\t');
