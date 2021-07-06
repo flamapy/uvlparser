@@ -72,6 +72,9 @@ imports: 'imports' INDENT imp*;
 imp: WORD 'as' WORD;
 
 //lexer rules
+
+fragment INT: '0' | ([1-9][0-9]*);
+
 KEYWORD:
 	(
 		'alternative'
@@ -82,6 +85,7 @@ KEYWORD:
 		| 'as'
 		| 'refer'
 		| 'mandatory'
+		| ('[' (INT '..')? (INT | '*') ']')
 	);
 
 WORD: [a-zA-Z][0-9a-zA-Z_]*;
