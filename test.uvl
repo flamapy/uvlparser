@@ -1,15 +1,16 @@
+imports
+    FileSystem as fs
 features
     Server { abstract }
         mandatory
-            FileSystem
-                or
-                    NTFS
-                    APFS
-                    EXT4
+            fs.FileSystem
             OperatingSystem { abstract }
                 alternative
                     Windows
                     macOS
                     Debian
         optional
-            Logging{default,log_level"warn"}
+            Logging {default , log_level "warn"}
+constraints
+    Windows => NTFS
+    macOS => APFS

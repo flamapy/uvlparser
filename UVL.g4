@@ -30,26 +30,48 @@ def nextToken(self):
 // parser rules
 
 // AST root, it will eventually contain more subtrees
-feature_model: features?;
+feature_model: imports? features? constraints?;
 
 // root of the features subtree
-features: 'features' child;
+features: 'features' INDENT child;
 
-// every child will consist on a feature word, followed by an indent and a set of relationships.
+// every child will consist on a feature spec, followed by an indent and a set of relationships.
 child: feature_spec INDENT relationship+ DEDENT;
 
+//a feature spec consists on a ref (feature name) and optional attributes. Each attribute has a key and an optional value.
 feature_spec: ref attributes?;
 ref: (WORD '.')* WORD;
 attributes: '{}' | '{' attribute (',' attribute)* '}';
-attribute: key value?;
+attribute: key ('"' value '"')?;
 key: WORD;
-value: '"' WORD '"';
+value: VALUE;
 
 // every relationship will consist on a keyword, followed by an indent and a set of children
 relationship: KEYWORD INDENT child+ DEDENT;
 
-//lexer rules
+// constraints block
+constraints: 'constraints' INDENT constraint*;
 
+constraint:
+	negation
+	| conjunction
+	| disjuction
+	| implication
+	| equivalence;
+
+negation: '!' WORD;
+conjunction: WORD '&' WORD;
+disjuction: WORD '|' WORD;
+implication: WORD '=>' WORD;
+equivalence: WORD '<=>' WORD;
+
+// imports blocK
+
+imports: 'imports' INDENT imp*;
+
+imp: WORD 'as' WORD;
+
+//lexer rules
 KEYWORD:
 	(
 		'alternative'
@@ -64,5 +86,10 @@ KEYWORD:
 
 WORD: [a-zA-Z][0-9a-zA-Z_]*;
 
+BOOLEAN: 'true' | 'false';
+NUMBER: '0' | ([1-9][0-9]* ('.' [0-9]+)?);
+VECTOR: '[' (VALUE (',')?)* ']';
+
+VALUE: BOOLEAN | NUMBER | WORD | VECTOR;
 WS: [ \n\r\t]+ -> skip;
-NL: ('\r'? '\n' '\t');
+NL: ('\r'? '\n' '\t') | (('\r'? '\n' ' '*));
