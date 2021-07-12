@@ -79,11 +79,7 @@ KEYWORD:
 	(
 		'alternative'
 		| 'or'
-		| 'constraints'
-		| 'true'
-		| 'false'
-		| 'as'
-		| 'refer'
+		| 'optional'
 		| 'mandatory'
 		| ('[' (INT '..')? (INT | '*') ']')
 	);
