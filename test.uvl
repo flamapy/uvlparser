@@ -4,7 +4,7 @@ features
     Server { abstract }
         mandatory
             FileSystem
-                [1..*]
+                or 
                     NTFS
                     APFS
                     EXT4
@@ -14,10 +14,7 @@ features
                     macOS
                     Debian
         optional
-            Logging {
-            default ,
-            log_level " warn "
-        }
+            Logging {default ,log_level " warn "}
 constraints
     Windows => NTFS
     macOS => APFS

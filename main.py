@@ -5,6 +5,11 @@ from UVLParser import UVLParser
 from UVLListener import UVLListener
 
 
+def visit(tree: UVLParser):
+
+    return None
+
+
 def main(argv):
     input_stream = FileStream(argv[1])
     lexer = UVLLexer(input_stream)
@@ -12,9 +17,10 @@ def main(argv):
     parser = UVLParser(stream)
     tree = parser.feature_model()
     print(tree.toStringTree(recog=parser))
-    printer = UVLListener()
+
+    listener = UVLListener()
     walker = ParseTreeWalker()
-    walker.walk(printer, tree)
+    walker.walk(listener, tree)
 
 
 if __name__ == '__main__':

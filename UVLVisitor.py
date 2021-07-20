@@ -24,6 +24,11 @@ class UVLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by UVLParser#relation.
+    def visitRelation(self, ctx:UVLParser.RelationContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by UVLParser#feature_spec.
     def visitFeature_spec(self, ctx:UVLParser.Feature_specContext):
         return self.visitChildren(ctx)
@@ -54,8 +59,8 @@ class UVLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by UVLParser#relationship.
-    def visitRelationship(self, ctx:UVLParser.RelationshipContext):
+    # Visit a parse tree produced by UVLParser#relation_spec.
+    def visitRelation_spec(self, ctx:UVLParser.Relation_specContext):
         return self.visitChildren(ctx)
 
 
