@@ -28,7 +28,7 @@ def nextToken(self):
 }
 
 // parser rules
-feature_model: imports? features? constraints?;
+feature_model: imports? features constraints?;
 
 //features block
 features: 'features' INDENT child DEDENT;
