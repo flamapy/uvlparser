@@ -68,8 +68,15 @@ imports: 'imports' INDENT imp* DEDENT;
 imp: WORD ('as' WORD)?;
 
 //lexer rules
+fragment INT: '0' | ([1-9][0-9]*);
 
-RELATION_WORD: ('alternative' | 'or' | 'optional' | 'mandatory');
+RELATION_WORD: (
+		'alternative'
+		| 'or'
+		| 'optional'
+		| 'mandatory'
+		| ('[' (INT '..')? (INT | '*') ']')
+	);
 
 WORD: [a-zA-Z][a-zA-Z0-9_]*;
 BOOLEAN: 'true' | 'false';
@@ -77,5 +84,5 @@ NUMBER: '0' | ([1-9][0-9]* ('.' [0-9]+)?);
 VECTOR: '[' (VALUE (',')?)* ']';
 
 VALUE: BOOLEAN | NUMBER | WORD | VECTOR;
-NL: ('\r'? '\n' ' '*);
+NL: ('\r'? '\n' ' '* | '\r'? '\n' '\t'*);
 WS: [ ]+ -> skip;

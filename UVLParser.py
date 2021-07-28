@@ -179,20 +179,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_feature_model
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFeature_model" ):
-                listener.enterFeature_model(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFeature_model" ):
-                listener.exitFeature_model(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFeature_model" ):
-                return visitor.visitFeature_model(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -255,20 +241,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_features
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFeatures" ):
-                listener.enterFeatures(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFeatures" ):
-                listener.exitFeatures(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFeatures" ):
-                return visitor.visitFeatures(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -323,20 +295,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_child
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterChild" ):
-                listener.enterChild(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitChild" ):
-                listener.exitChild(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitChild" ):
-                return visitor.visitChild(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -413,20 +371,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_relation
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRelation" ):
-                listener.enterRelation(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRelation" ):
-                listener.exitRelation(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitRelation" ):
-                return visitor.visitRelation(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -490,20 +434,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_feature_spec
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFeature_spec" ):
-                listener.enterFeature_spec(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFeature_spec" ):
-                listener.exitFeature_spec(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFeature_spec" ):
-                return visitor.visitFeature_spec(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -547,20 +477,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_ref
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRef" ):
-                listener.enterRef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRef" ):
-                listener.exitRef(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitRef" ):
-                return visitor.visitRef(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -610,20 +526,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_attributes
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttributes" ):
-                listener.enterAttributes(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttributes" ):
-                listener.exitAttributes(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAttributes" ):
-                return visitor.visitAttributes(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -692,20 +594,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_attribute
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttribute" ):
-                listener.enterAttribute(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttribute" ):
-                listener.exitAttribute(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAttribute" ):
-                return visitor.visitAttribute(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -751,20 +639,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_key
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterKey" ):
-                listener.enterKey(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitKey" ):
-                listener.exitKey(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitKey" ):
-                return visitor.visitKey(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -797,20 +671,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_value
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterValue" ):
-                listener.enterValue(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitValue" ):
-                listener.exitValue(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitValue" ):
-                return visitor.visitValue(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -842,20 +702,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_relation_spec
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRelation_spec" ):
-                listener.enterRelation_spec(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRelation_spec" ):
-                listener.exitRelation_spec(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitRelation_spec" ):
-                return visitor.visitRelation_spec(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -898,20 +744,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_constraints
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConstraints" ):
-                listener.enterConstraints(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConstraints" ):
-                listener.exitConstraints(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitConstraints" ):
-                return visitor.visitConstraints(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -977,20 +809,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_constraint
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConstraint" ):
-                listener.enterConstraint(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConstraint" ):
-                listener.exitConstraint(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitConstraint" ):
-                return visitor.visitConstraint(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -1054,20 +872,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_negation
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNegation" ):
-                listener.enterNegation(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNegation" ):
-                listener.exitNegation(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNegation" ):
-                return visitor.visitNegation(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -1104,20 +908,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_conjunction
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConjunction" ):
-                listener.enterConjunction(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConjunction" ):
-                listener.exitConjunction(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitConjunction" ):
-                return visitor.visitConjunction(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -1158,20 +948,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_disjuction
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDisjuction" ):
-                listener.enterDisjuction(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDisjuction" ):
-                listener.exitDisjuction(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitDisjuction" ):
-                return visitor.visitDisjuction(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -1211,20 +987,6 @@ class UVLParser ( Parser ):
         def getRuleIndex(self):
             return UVLParser.RULE_implication
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImplication" ):
-                listener.enterImplication(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImplication" ):
-                listener.exitImplication(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitImplication" ):
-                return visitor.visitImplication(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -1263,20 +1025,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_equivalence
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEquivalence" ):
-                listener.enterEquivalence(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEquivalence" ):
-                listener.exitEquivalence(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitEquivalence" ):
-                return visitor.visitEquivalence(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -1323,20 +1071,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_imports
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImports" ):
-                listener.enterImports(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImports" ):
-                listener.exitImports(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitImports" ):
-                return visitor.visitImports(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -1387,20 +1121,6 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_imp
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImp" ):
-                listener.enterImp(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImp" ):
-                listener.exitImp(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitImp" ):
-                return visitor.visitImp(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
