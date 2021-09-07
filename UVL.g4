@@ -33,10 +33,10 @@ feature_model: imports? features constraints?;
 //features block
 features: 'features' INDENT child DEDENT;
 
-child: feature_spec (INDENT relation* (DEDENT | EOF))?;
-relation: relation_spec (INDENT child* (DEDENT | EOF))?;
+child: feature_spec (INDENT relation* (EOF | NL?))?;
+relation: relation_spec (INDENT child* (EOF | NL?))?;
 
-feature_spec: ref attributes?;
+feature_spec: ref attributes? NL?;
 ref: (WORD '.')* WORD;
 attributes: '{}' | '{' attribute (',' attribute)* '}';
 attribute: key ('"' value '"')?;
@@ -46,7 +46,7 @@ value: VALUE;
 relation_spec: RELATION_WORD;
 
 //constraints block constraints block
-constraints: 'constraints' INDENT constraint* DEDENT;
+constraints: 'constraints' INDENT (constraint NL?)* (DEDENT|EOF);
 
 constraint:
 	negation
@@ -65,7 +65,7 @@ equivalence: WORD '<=>' WORD;
 
 imports: 'imports' INDENT imp* DEDENT;
 
-imp: WORD ('as' WORD)?;
+imp: WORD ('as' WORD)? NL?;
 
 //lexer rules
 fragment INT: '0' | ([1-9][0-9]*);
