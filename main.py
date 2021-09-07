@@ -1,7 +1,7 @@
 import sys
 from antlr4 import *
-from .UVLLexer import UVLLexer
-from .UVLParser import UVLParser
+from UVLLexer import UVLLexer
+from UVLParser import UVLParser
 
 
 def get_tree(argv):
@@ -10,5 +10,8 @@ def get_tree(argv):
     stream = CommonTokenStream(lexer)
     parser = UVLParser(stream)
     tree = parser.feature_model()
+    print(tree.toStringTree(tree,parser))
 
     return tree
+
+get_tree("test.uvl")

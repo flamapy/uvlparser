@@ -14,7 +14,7 @@ features
                     macOS
                     Debian
         optional
-            Logging {default ,log_level " warn "}
+            Logging {default ,log_level "warn"}
 constraints
     Windows => NTFS
     macOS => APFS

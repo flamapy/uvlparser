@@ -33,8 +33,8 @@ feature_model: imports? features constraints?;
 //features block
 features: 'features' INDENT child DEDENT;
 
-child: feature_spec (INDENT relation* (EOF | NL?))?;
-relation: relation_spec (INDENT child* (EOF | NL?))?;
+child: feature_spec (INDENT relation* (DEDENT | EOF ))?;
+relation: relation_spec (INDENT child* (DEDENT | EOF ))?;
 
 feature_spec: ref attributes? NL?;
 ref: (WORD '.')* WORD;

@@ -203,6 +203,7 @@ public class UVLParser extends Parser {
 			return getRuleContext(Feature_specContext.class,0);
 		}
 		public TerminalNode INDENT() { return getToken(UVLParser.INDENT, 0); }
+		public TerminalNode DEDENT() { return getToken(UVLParser.DEDENT, 0); }
 		public TerminalNode EOF() { return getToken(UVLParser.EOF, 0); }
 		public List<RelationContext> relation() {
 			return getRuleContexts(RelationContext.class);
@@ -210,7 +211,6 @@ public class UVLParser extends Parser {
 		public RelationContext relation(int i) {
 			return getRuleContext(RelationContext.class,i);
 		}
-		public TerminalNode NL() { return getToken(UVLParser.NL, 0); }
 		public ChildContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -222,12 +222,11 @@ public class UVLParser extends Parser {
 		enterRule(_localctx, 4, RULE_child);
 		int _la;
 		try {
-			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(52);
 			feature_spec();
-			setState(66);
+			setState(61);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==INDENT) {
@@ -236,43 +235,27 @@ public class UVLParser extends Parser {
 				match(INDENT);
 				setState(57);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
-				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-					if ( _alt==1 ) {
-						{
-						{
-						setState(54);
-						relation();
-						}
-						} 
+				_la = _input.LA(1);
+				while (_la==RELATION_WORD) {
+					{
+					{
+					setState(54);
+					relation();
+					}
 					}
 					setState(59);
 					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
+					_la = _input.LA(1);
 				}
-				setState(64);
-				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
-				case 1:
-					{
-					setState(60);
-					match(EOF);
-					}
-					break;
-				case 2:
-					{
-					setState(62);
-					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
-					case 1:
-						{
-						setState(61);
-						match(NL);
-						}
-						break;
-					}
-					}
-					break;
+				setState(60);
+				_la = _input.LA(1);
+				if ( !(_la==EOF || _la==DEDENT) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
 				}
 				}
 			}
@@ -295,6 +278,7 @@ public class UVLParser extends Parser {
 			return getRuleContext(Relation_specContext.class,0);
 		}
 		public TerminalNode INDENT() { return getToken(UVLParser.INDENT, 0); }
+		public TerminalNode DEDENT() { return getToken(UVLParser.DEDENT, 0); }
 		public TerminalNode EOF() { return getToken(UVLParser.EOF, 0); }
 		public List<ChildContext> child() {
 			return getRuleContexts(ChildContext.class);
@@ -302,7 +286,6 @@ public class UVLParser extends Parser {
 		public ChildContext child(int i) {
 			return getRuleContext(ChildContext.class,i);
 		}
-		public TerminalNode NL() { return getToken(UVLParser.NL, 0); }
 		public RelationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -314,57 +297,40 @@ public class UVLParser extends Parser {
 		enterRule(_localctx, 6, RULE_relation);
 		int _la;
 		try {
-			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(68);
+			setState(63);
 			relation_spec();
-			setState(82);
+			setState(72);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==INDENT) {
 				{
-				setState(69);
+				setState(64);
 				match(INDENT);
-				setState(73);
+				setState(68);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
-				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-					if ( _alt==1 ) {
-						{
-						{
-						setState(70);
-						child();
-						}
-						} 
+				_la = _input.LA(1);
+				while (_la==WORD) {
+					{
+					{
+					setState(65);
+					child();
 					}
-					setState(75);
+					}
+					setState(70);
 					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
+					_la = _input.LA(1);
 				}
-				setState(80);
-				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
-				case 1:
-					{
-					setState(76);
-					match(EOF);
-					}
-					break;
-				case 2:
-					{
-					setState(78);
-					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
-					case 1:
-						{
-						setState(77);
-						match(NL);
-						}
-						break;
-					}
-					}
-					break;
+				setState(71);
+				_la = _input.LA(1);
+				if ( !(_la==EOF || _la==DEDENT) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
 				}
 				}
 			}
@@ -403,28 +369,28 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(84);
+			setState(74);
 			ref();
-			setState(86);
+			setState(76);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__2 || _la==T__3) {
 				{
-				setState(85);
+				setState(75);
 				attributes();
 				}
 			}
 
-			setState(89);
+			setState(79);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
-			case 1:
+			_la = _input.LA(1);
+			if (_la==NL) {
 				{
-				setState(88);
+				setState(78);
 				match(NL);
 				}
-				break;
 			}
+
 			}
 		}
 		catch (RecognitionException re) {
@@ -456,25 +422,25 @@ public class UVLParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(95);
+			setState(85);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,12,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(91);
+					setState(81);
 					match(WORD);
-					setState(92);
+					setState(82);
 					match(T__1);
 					}
 					} 
 				}
-				setState(97);
+				setState(87);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,12,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			}
-			setState(98);
+			setState(88);
 			match(WORD);
 			}
 		}
@@ -507,40 +473,40 @@ public class UVLParser extends Parser {
 		enterRule(_localctx, 12, RULE_attributes);
 		int _la;
 		try {
-			setState(112);
+			setState(102);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__2:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(100);
+				setState(90);
 				match(T__2);
 				}
 				break;
 			case T__3:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(101);
+				setState(91);
 				match(T__3);
-				setState(102);
+				setState(92);
 				attribute();
-				setState(107);
+				setState(97);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==T__4) {
 					{
 					{
-					setState(103);
+					setState(93);
 					match(T__4);
-					setState(104);
+					setState(94);
 					attribute();
 					}
 					}
-					setState(109);
+					setState(99);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(110);
+				setState(100);
 				match(T__5);
 				}
 				break;
@@ -579,18 +545,18 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(114);
+			setState(104);
 			key();
-			setState(119);
+			setState(109);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__6) {
 				{
-				setState(115);
+				setState(105);
 				match(T__6);
-				setState(116);
+				setState(106);
 				value();
-				setState(117);
+				setState(107);
 				match(T__6);
 				}
 			}
@@ -622,7 +588,7 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(121);
+			setState(111);
 			match(WORD);
 			}
 		}
@@ -651,7 +617,7 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(123);
+			setState(113);
 			match(VALUE);
 			}
 		}
@@ -680,7 +646,7 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(125);
+			setState(115);
 			match(RELATION_WORD);
 			}
 		}
@@ -722,35 +688,35 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(127);
+			setState(117);
 			match(T__7);
-			setState(128);
+			setState(118);
 			match(INDENT);
-			setState(135);
+			setState(125);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__8 || _la==WORD) {
 				{
 				{
-				setState(129);
+				setState(119);
 				constraint();
-				setState(131);
+				setState(121);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==NL) {
 					{
-					setState(130);
+					setState(120);
 					match(NL);
 					}
 				}
 
 				}
 				}
-				setState(137);
+				setState(127);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(138);
+			setState(128);
 			_la = _input.LA(1);
 			if ( !(_la==EOF || _la==DEDENT) ) {
 			_errHandler.recoverInline(this);
@@ -799,41 +765,41 @@ public class UVLParser extends Parser {
 		ConstraintContext _localctx = new ConstraintContext(_ctx, getState());
 		enterRule(_localctx, 24, RULE_constraint);
 		try {
-			setState(145);
+			setState(135);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(140);
+				setState(130);
 				negation();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(141);
+				setState(131);
 				conjunction();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(142);
+				setState(132);
 				disjuction();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(143);
+				setState(133);
 				implication();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(144);
+				setState(134);
 				equivalence();
 				}
 				break;
@@ -864,9 +830,9 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(147);
+			setState(137);
 			match(T__8);
-			setState(148);
+			setState(138);
 			match(WORD);
 			}
 		}
@@ -898,11 +864,11 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(150);
+			setState(140);
 			match(WORD);
-			setState(151);
+			setState(141);
 			match(T__9);
-			setState(152);
+			setState(142);
 			match(WORD);
 			}
 		}
@@ -934,11 +900,11 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(154);
+			setState(144);
 			match(WORD);
-			setState(155);
+			setState(145);
 			match(T__10);
-			setState(156);
+			setState(146);
 			match(WORD);
 			}
 		}
@@ -970,11 +936,11 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(158);
+			setState(148);
 			match(WORD);
-			setState(159);
+			setState(149);
 			match(T__11);
-			setState(160);
+			setState(150);
 			match(WORD);
 			}
 		}
@@ -1006,11 +972,11 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(162);
+			setState(152);
 			match(WORD);
-			setState(163);
+			setState(153);
 			match(T__12);
-			setState(164);
+			setState(154);
 			match(WORD);
 			}
 		}
@@ -1047,25 +1013,25 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(166);
+			setState(156);
 			match(T__13);
-			setState(167);
+			setState(157);
 			match(INDENT);
-			setState(171);
+			setState(161);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==WORD) {
 				{
 				{
-				setState(168);
+				setState(158);
 				imp();
 				}
 				}
-				setState(173);
+				setState(163);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(174);
+			setState(164);
 			match(DEDENT);
 			}
 		}
@@ -1099,26 +1065,26 @@ public class UVLParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(176);
+			setState(166);
 			match(WORD);
-			setState(179);
+			setState(169);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__14) {
 				{
-				setState(177);
+				setState(167);
 				match(T__14);
-				setState(178);
+				setState(168);
 				match(WORD);
 				}
 			}
 
-			setState(182);
+			setState(172);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NL) {
 				{
-				setState(181);
+				setState(171);
 				match(NL);
 				}
 			}
@@ -1137,61 +1103,56 @@ public class UVLParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\33\u00bb\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\33\u00b1\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\3\2\5\2,\n\2\3\2\3\2\5\2\60\n\2\3\3\3\3"+
-		"\3\3\3\3\3\3\3\4\3\4\3\4\7\4:\n\4\f\4\16\4=\13\4\3\4\3\4\5\4A\n\4\5\4"+
-		"C\n\4\5\4E\n\4\3\5\3\5\3\5\7\5J\n\5\f\5\16\5M\13\5\3\5\3\5\5\5Q\n\5\5"+
-		"\5S\n\5\5\5U\n\5\3\6\3\6\5\6Y\n\6\3\6\5\6\\\n\6\3\7\3\7\7\7`\n\7\f\7\16"+
-		"\7c\13\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\7\bl\n\b\f\b\16\bo\13\b\3\b\3\b\5"+
-		"\bs\n\b\3\t\3\t\3\t\3\t\3\t\5\tz\n\t\3\n\3\n\3\13\3\13\3\f\3\f\3\r\3\r"+
-		"\3\r\3\r\5\r\u0086\n\r\7\r\u0088\n\r\f\r\16\r\u008b\13\r\3\r\3\r\3\16"+
-		"\3\16\3\16\3\16\3\16\5\16\u0094\n\16\3\17\3\17\3\17\3\20\3\20\3\20\3\20"+
-		"\3\21\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23\3\23\3\23\3\24\3\24"+
-		"\3\24\7\24\u00ac\n\24\f\24\16\24\u00af\13\24\3\24\3\24\3\25\3\25\3\25"+
-		"\5\25\u00b6\n\25\3\25\5\25\u00b9\n\25\3\25\2\2\26\2\4\6\b\n\f\16\20\22"+
-		"\24\26\30\32\34\36 \"$&(\2\3\3\3\33\33\2\u00bf\2+\3\2\2\2\4\61\3\2\2\2"+
-		"\6\66\3\2\2\2\bF\3\2\2\2\nV\3\2\2\2\fa\3\2\2\2\16r\3\2\2\2\20t\3\2\2\2"+
-		"\22{\3\2\2\2\24}\3\2\2\2\26\177\3\2\2\2\30\u0081\3\2\2\2\32\u0093\3\2"+
-		"\2\2\34\u0095\3\2\2\2\36\u0098\3\2\2\2 \u009c\3\2\2\2\"\u00a0\3\2\2\2"+
-		"$\u00a4\3\2\2\2&\u00a8\3\2\2\2(\u00b2\3\2\2\2*,\5&\24\2+*\3\2\2\2+,\3"+
-		"\2\2\2,-\3\2\2\2-/\5\4\3\2.\60\5\30\r\2/.\3\2\2\2/\60\3\2\2\2\60\3\3\2"+
-		"\2\2\61\62\7\3\2\2\62\63\7\32\2\2\63\64\5\6\4\2\64\65\7\33\2\2\65\5\3"+
-		"\2\2\2\66D\5\n\6\2\67;\7\32\2\28:\5\b\5\298\3\2\2\2:=\3\2\2\2;9\3\2\2"+
-		"\2;<\3\2\2\2<B\3\2\2\2=;\3\2\2\2>C\7\2\2\3?A\7\30\2\2@?\3\2\2\2@A\3\2"+
-		"\2\2AC\3\2\2\2B>\3\2\2\2B@\3\2\2\2CE\3\2\2\2D\67\3\2\2\2DE\3\2\2\2E\7"+
-		"\3\2\2\2FT\5\26\f\2GK\7\32\2\2HJ\5\6\4\2IH\3\2\2\2JM\3\2\2\2KI\3\2\2\2"+
-		"KL\3\2\2\2LR\3\2\2\2MK\3\2\2\2NS\7\2\2\3OQ\7\30\2\2PO\3\2\2\2PQ\3\2\2"+
-		"\2QS\3\2\2\2RN\3\2\2\2RP\3\2\2\2SU\3\2\2\2TG\3\2\2\2TU\3\2\2\2U\t\3\2"+
-		"\2\2VX\5\f\7\2WY\5\16\b\2XW\3\2\2\2XY\3\2\2\2Y[\3\2\2\2Z\\\7\30\2\2[Z"+
-		"\3\2\2\2[\\\3\2\2\2\\\13\3\2\2\2]^\7\23\2\2^`\7\4\2\2_]\3\2\2\2`c\3\2"+
-		"\2\2a_\3\2\2\2ab\3\2\2\2bd\3\2\2\2ca\3\2\2\2de\7\23\2\2e\r\3\2\2\2fs\7"+
-		"\5\2\2gh\7\6\2\2hm\5\20\t\2ij\7\7\2\2jl\5\20\t\2ki\3\2\2\2lo\3\2\2\2m"+
-		"k\3\2\2\2mn\3\2\2\2np\3\2\2\2om\3\2\2\2pq\7\b\2\2qs\3\2\2\2rf\3\2\2\2"+
-		"rg\3\2\2\2s\17\3\2\2\2ty\5\22\n\2uv\7\t\2\2vw\5\24\13\2wx\7\t\2\2xz\3"+
-		"\2\2\2yu\3\2\2\2yz\3\2\2\2z\21\3\2\2\2{|\7\23\2\2|\23\3\2\2\2}~\7\27\2"+
-		"\2~\25\3\2\2\2\177\u0080\7\22\2\2\u0080\27\3\2\2\2\u0081\u0082\7\n\2\2"+
-		"\u0082\u0089\7\32\2\2\u0083\u0085\5\32\16\2\u0084\u0086\7\30\2\2\u0085"+
-		"\u0084\3\2\2\2\u0085\u0086\3\2\2\2\u0086\u0088\3\2\2\2\u0087\u0083\3\2"+
-		"\2\2\u0088\u008b\3\2\2\2\u0089\u0087\3\2\2\2\u0089\u008a\3\2\2\2\u008a"+
-		"\u008c\3\2\2\2\u008b\u0089\3\2\2\2\u008c\u008d\t\2\2\2\u008d\31\3\2\2"+
-		"\2\u008e\u0094\5\34\17\2\u008f\u0094\5\36\20\2\u0090\u0094\5 \21\2\u0091"+
-		"\u0094\5\"\22\2\u0092\u0094\5$\23\2\u0093\u008e\3\2\2\2\u0093\u008f\3"+
-		"\2\2\2\u0093\u0090\3\2\2\2\u0093\u0091\3\2\2\2\u0093\u0092\3\2\2\2\u0094"+
-		"\33\3\2\2\2\u0095\u0096\7\13\2\2\u0096\u0097\7\23\2\2\u0097\35\3\2\2\2"+
-		"\u0098\u0099\7\23\2\2\u0099\u009a\7\f\2\2\u009a\u009b\7\23\2\2\u009b\37"+
-		"\3\2\2\2\u009c\u009d\7\23\2\2\u009d\u009e\7\r\2\2\u009e\u009f\7\23\2\2"+
-		"\u009f!\3\2\2\2\u00a0\u00a1\7\23\2\2\u00a1\u00a2\7\16\2\2\u00a2\u00a3"+
-		"\7\23\2\2\u00a3#\3\2\2\2\u00a4\u00a5\7\23\2\2\u00a5\u00a6\7\17\2\2\u00a6"+
-		"\u00a7\7\23\2\2\u00a7%\3\2\2\2\u00a8\u00a9\7\20\2\2\u00a9\u00ad\7\32\2"+
-		"\2\u00aa\u00ac\5(\25\2\u00ab\u00aa\3\2\2\2\u00ac\u00af\3\2\2\2\u00ad\u00ab"+
-		"\3\2\2\2\u00ad\u00ae\3\2\2\2\u00ae\u00b0\3\2\2\2\u00af\u00ad\3\2\2\2\u00b0"+
-		"\u00b1\7\33\2\2\u00b1\'\3\2\2\2\u00b2\u00b5\7\23\2\2\u00b3\u00b4\7\21"+
-		"\2\2\u00b4\u00b6\7\23\2\2\u00b5\u00b3\3\2\2\2\u00b5\u00b6\3\2\2\2\u00b6"+
-		"\u00b8\3\2\2\2\u00b7\u00b9\7\30\2\2\u00b8\u00b7\3\2\2\2\u00b8\u00b9\3"+
-		"\2\2\2\u00b9)\3\2\2\2\30+/;@BDKPRTX[amry\u0085\u0089\u0093\u00ad\u00b5"+
-		"\u00b8";
+		"\3\3\3\3\3\3\3\4\3\4\3\4\7\4:\n\4\f\4\16\4=\13\4\3\4\5\4@\n\4\3\5\3\5"+
+		"\3\5\7\5E\n\5\f\5\16\5H\13\5\3\5\5\5K\n\5\3\6\3\6\5\6O\n\6\3\6\5\6R\n"+
+		"\6\3\7\3\7\7\7V\n\7\f\7\16\7Y\13\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\7\bb\n"+
+		"\b\f\b\16\be\13\b\3\b\3\b\5\bi\n\b\3\t\3\t\3\t\3\t\3\t\5\tp\n\t\3\n\3"+
+		"\n\3\13\3\13\3\f\3\f\3\r\3\r\3\r\3\r\5\r|\n\r\7\r~\n\r\f\r\16\r\u0081"+
+		"\13\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\5\16\u008a\n\16\3\17\3\17\3\17"+
+		"\3\20\3\20\3\20\3\20\3\21\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23"+
+		"\3\23\3\23\3\24\3\24\3\24\7\24\u00a2\n\24\f\24\16\24\u00a5\13\24\3\24"+
+		"\3\24\3\25\3\25\3\25\5\25\u00ac\n\25\3\25\5\25\u00af\n\25\3\25\2\2\26"+
+		"\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(\2\3\3\3\33\33\2\u00b1\2"+
+		"+\3\2\2\2\4\61\3\2\2\2\6\66\3\2\2\2\bA\3\2\2\2\nL\3\2\2\2\fW\3\2\2\2\16"+
+		"h\3\2\2\2\20j\3\2\2\2\22q\3\2\2\2\24s\3\2\2\2\26u\3\2\2\2\30w\3\2\2\2"+
+		"\32\u0089\3\2\2\2\34\u008b\3\2\2\2\36\u008e\3\2\2\2 \u0092\3\2\2\2\"\u0096"+
+		"\3\2\2\2$\u009a\3\2\2\2&\u009e\3\2\2\2(\u00a8\3\2\2\2*,\5&\24\2+*\3\2"+
+		"\2\2+,\3\2\2\2,-\3\2\2\2-/\5\4\3\2.\60\5\30\r\2/.\3\2\2\2/\60\3\2\2\2"+
+		"\60\3\3\2\2\2\61\62\7\3\2\2\62\63\7\32\2\2\63\64\5\6\4\2\64\65\7\33\2"+
+		"\2\65\5\3\2\2\2\66?\5\n\6\2\67;\7\32\2\28:\5\b\5\298\3\2\2\2:=\3\2\2\2"+
+		";9\3\2\2\2;<\3\2\2\2<>\3\2\2\2=;\3\2\2\2>@\t\2\2\2?\67\3\2\2\2?@\3\2\2"+
+		"\2@\7\3\2\2\2AJ\5\26\f\2BF\7\32\2\2CE\5\6\4\2DC\3\2\2\2EH\3\2\2\2FD\3"+
+		"\2\2\2FG\3\2\2\2GI\3\2\2\2HF\3\2\2\2IK\t\2\2\2JB\3\2\2\2JK\3\2\2\2K\t"+
+		"\3\2\2\2LN\5\f\7\2MO\5\16\b\2NM\3\2\2\2NO\3\2\2\2OQ\3\2\2\2PR\7\30\2\2"+
+		"QP\3\2\2\2QR\3\2\2\2R\13\3\2\2\2ST\7\23\2\2TV\7\4\2\2US\3\2\2\2VY\3\2"+
+		"\2\2WU\3\2\2\2WX\3\2\2\2XZ\3\2\2\2YW\3\2\2\2Z[\7\23\2\2[\r\3\2\2\2\\i"+
+		"\7\5\2\2]^\7\6\2\2^c\5\20\t\2_`\7\7\2\2`b\5\20\t\2a_\3\2\2\2be\3\2\2\2"+
+		"ca\3\2\2\2cd\3\2\2\2df\3\2\2\2ec\3\2\2\2fg\7\b\2\2gi\3\2\2\2h\\\3\2\2"+
+		"\2h]\3\2\2\2i\17\3\2\2\2jo\5\22\n\2kl\7\t\2\2lm\5\24\13\2mn\7\t\2\2np"+
+		"\3\2\2\2ok\3\2\2\2op\3\2\2\2p\21\3\2\2\2qr\7\23\2\2r\23\3\2\2\2st\7\27"+
+		"\2\2t\25\3\2\2\2uv\7\22\2\2v\27\3\2\2\2wx\7\n\2\2x\177\7\32\2\2y{\5\32"+
+		"\16\2z|\7\30\2\2{z\3\2\2\2{|\3\2\2\2|~\3\2\2\2}y\3\2\2\2~\u0081\3\2\2"+
+		"\2\177}\3\2\2\2\177\u0080\3\2\2\2\u0080\u0082\3\2\2\2\u0081\177\3\2\2"+
+		"\2\u0082\u0083\t\2\2\2\u0083\31\3\2\2\2\u0084\u008a\5\34\17\2\u0085\u008a"+
+		"\5\36\20\2\u0086\u008a\5 \21\2\u0087\u008a\5\"\22\2\u0088\u008a\5$\23"+
+		"\2\u0089\u0084\3\2\2\2\u0089\u0085\3\2\2\2\u0089\u0086\3\2\2\2\u0089\u0087"+
+		"\3\2\2\2\u0089\u0088\3\2\2\2\u008a\33\3\2\2\2\u008b\u008c\7\13\2\2\u008c"+
+		"\u008d\7\23\2\2\u008d\35\3\2\2\2\u008e\u008f\7\23\2\2\u008f\u0090\7\f"+
+		"\2\2\u0090\u0091\7\23\2\2\u0091\37\3\2\2\2\u0092\u0093\7\23\2\2\u0093"+
+		"\u0094\7\r\2\2\u0094\u0095\7\23\2\2\u0095!\3\2\2\2\u0096\u0097\7\23\2"+
+		"\2\u0097\u0098\7\16\2\2\u0098\u0099\7\23\2\2\u0099#\3\2\2\2\u009a\u009b"+
+		"\7\23\2\2\u009b\u009c\7\17\2\2\u009c\u009d\7\23\2\2\u009d%\3\2\2\2\u009e"+
+		"\u009f\7\20\2\2\u009f\u00a3\7\32\2\2\u00a0\u00a2\5(\25\2\u00a1\u00a0\3"+
+		"\2\2\2\u00a2\u00a5\3\2\2\2\u00a3\u00a1\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4"+
+		"\u00a6\3\2\2\2\u00a5\u00a3\3\2\2\2\u00a6\u00a7\7\33\2\2\u00a7\'\3\2\2"+
+		"\2\u00a8\u00ab\7\23\2\2\u00a9\u00aa\7\21\2\2\u00aa\u00ac\7\23\2\2\u00ab"+
+		"\u00a9\3\2\2\2\u00ab\u00ac\3\2\2\2\u00ac\u00ae\3\2\2\2\u00ad\u00af\7\30"+
+		"\2\2\u00ae\u00ad\3\2\2\2\u00ae\u00af\3\2\2\2\u00af)\3\2\2\2\24+/;?FJN"+
+		"QWcho{\177\u0089\u00a3\u00ab\u00ae";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
