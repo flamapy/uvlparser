@@ -41,7 +41,7 @@ ref: (WORD '.')* WORD;
 attributes: '{}' | '{' attribute (',' attribute)* '}';
 attribute: key ('"' value '"')?;
 key: WORD;
-value: VALUE;
+value: (BOOLEAN | NUMBER | WORD | VECTOR);
 
 relation_spec: RELATION_WORD;
 
@@ -81,8 +81,7 @@ RELATION_WORD: (
 WORD: [a-zA-Z][a-zA-Z0-9_]*;
 BOOLEAN: 'true' | 'false';
 NUMBER: '0' | ([1-9][0-9]* ('.' [0-9]+)?);
-VECTOR: '[' (VALUE (',')?)* ']';
+VECTOR: '[' ((BOOLEAN | NUMBER | WORD | VECTOR) (',')?)* ']';
 
-VALUE: BOOLEAN | NUMBER | WORD | VECTOR;
 NL: ('\r'? '\n' ' '* | '\r'? '\n' '\t'*);
 WS: [ ]+ -> skip;
