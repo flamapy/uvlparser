@@ -53,13 +53,17 @@ constraint:
 	| conjunction
 	| disjuction
 	| implication
-	| equivalence;
+	| equivalence
+	| requires
+	| excludes;
 
 negation: '!' WORD;
 conjunction: WORD '&' WORD;
 disjuction: WORD '|' WORD;
 implication: WORD '=>' WORD;
 equivalence: WORD '<=>' WORD;
+requires: WORD 'requires' WORD;
+excludes: WORD 'excludes' WORD;
 
 // imports blocK
 
