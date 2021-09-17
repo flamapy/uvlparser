@@ -10,7 +10,6 @@ def get_tree(argv):
     stream = CommonTokenStream(lexer)
     parser = UVLParser(stream)
     tree = parser.feature_model()
-    print(tree.toStringTree(tree, parser))
+
     return tree
 
-get_tree("test.uvl")
