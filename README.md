@@ -23,6 +23,49 @@ With this, any grammar change or update done to the UVL.g4 file will be effectiv
 
 ## Usage and integration
 
-With the grammar defined and the parser generated, get_tree.py gives us a method that, when given an uvl file via absolute path, a ParseTree object is returned. ParseTree is an ANTLR object which represents an AST-ish structure of the file we read with the defined grammar.
+With the grammar defined and the parser generated, get_tree.py gives us a method that, returns a ParseTree object given an uvl file via absolute path. ParseTree is an ANTLR object which represents an AST-ish structure of the file we read with the defined grammar.
 
-[This file] performs a transformation from an ANTLR ParseTree to a fm_metamodel-structured FM. Pretty much every way to obtain data from this ParseTree can be seen there.
+[This file](https://github.com/diverso-lab/fm_metamodel/blob/master/famapy/metamodels/fm_metamodel/transformations/uvl_transformation.py) performs a transformation from an ANTLR ParseTree to a fm_metamodel-structured FM. Pretty much every way to obtain data from this ParseTree can be seen there. However, we will give some insight into its structure for easier usage and integration.
+
+First, these dependencies must be installed:
+
+```
+apt install antlr4
+pip3 install antlr-denter
+```
+
+Now, after getting our ParseTree object from the parser:
+
+### Features and relations
+
+```
+root_feature = parse_tree.features().child() #Returns a ChildContext object which contains the model root feature
+```
+For any ChildContext object:
+```
+child_context.feature_spec() # Returns the feature contained in the node
+child_context.feature_spec().ref() # From the feature, return the node containing its name
+child_context.feature_spec().ref().WORD()[0].getText() # From feature ref, obtain its actual name. We have to get the first element from WORD() as, in imports (yet to be supported), multiple WORDs are allowed on the same ref. getText() function returns a string with the text from the node called.
+
+child_context.feature_spec().relation() # Returns the list of RelationContext objects children of the feature called
+```
+
+For any RelationContext object:
+```
+relation_context.relation_spec() # Return the node containing the relation
+relation_context.relation_spec().RELATION_WORD().getText() # Return a string containing the relation's name
+relation_context.relation_spec().child() # Return the list of ChildContext objects the relation is parent of, with each one being processed as described above
+```
+
+### Constraints
+```
+constraints_node = parse_tree.constraints() # Returns ConstraintsContext object
+constraints_node.constraint() # Returns list of ConstraintContext objects, with each node containing a constraint
+```
+
+For any ConstraintContext object:
+```
+list(constraint_context.getChildren())[0] # Returns the constraint itself, it is a bit tricky due to its structure in the parser
+constraint.WORD[0].getText() # Returns the left node of the constraint, [1] returns the right node
+constraint.getChild(1).getText() # Returns constraint operator
+```
