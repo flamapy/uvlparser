@@ -19,6 +19,10 @@ Then, this command should generate the files we need for the parser to work:
 antlr4 -Dlanguage=Python3 -no-listener UVL.g4
 ```
 
-After that, get_tree.py gives us a method that, when given an uvl file via absolute path, a ParseTree object is returned. ParseTree is an ANTLR object which represents an AST-ish structure of the file we read with the defined grammar.
+With this, any grammar change or update done to the UVL.g4 file will be effective.
+
+## Usage and integration
+
+With the grammar defined and the parser generated, get_tree.py gives us a method that, when given an uvl file via absolute path, a ParseTree object is returned. ParseTree is an ANTLR object which represents an AST-ish structure of the file we read with the defined grammar.
 
 [This file] performs a transformation from an ANTLR ParseTree to a fm_metamodel-structured FM. Pretty much every way to obtain data from this ParseTree can be seen there.
