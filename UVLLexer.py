@@ -9,7 +9,6 @@ from antlr_denter.DenterHelper import DenterHelper
 from .UVLParser import UVLParser
 
 
-
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\32")
@@ -136,7 +135,7 @@ class UVLLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     T__0 = 1
     T__1 = 2
@@ -163,33 +162,33 @@ class UVLLexer(Lexer):
     NL = 23
     WS = 24
 
-    channelNames = [ u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN" ]
+    channelNames = [u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN"]
 
-    modeNames = [ "DEFAULT_MODE" ]
+    modeNames = ["DEFAULT_MODE"]
 
-    literalNames = [ "<INVALID>",
-            "'features'", "'.'", "'{}'", "'{'", "','", "'}'", "'\"'", "'constraints'", 
-            "'!'", "'&'", "'|'", "'=>'", "'<=>'", "'requires'", "'excludes'", 
-            "'imports'", "'as'" ]
+    literalNames = ["<INVALID>",
+                    "'features'", "'.'", "'{}'", "'{'", "','", "'}'", "'\"'", "'constraints'",
+                    "'!'", "'&'", "'|'", "'=>'", "'<=>'", "'requires'", "'excludes'",
+                    "'imports'", "'as'"]
 
-    symbolicNames = [ "<INVALID>",
-            "RELATION_WORD", "WORD", "BOOLEAN", "NUMBER", "VECTOR", "NL", 
-            "WS" ]
+    symbolicNames = ["<INVALID>",
+                     "RELATION_WORD", "WORD", "BOOLEAN", "NUMBER", "VECTOR", "NL",
+                     "WS"]
 
-    ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", 
-                  "T__7", "T__8", "T__9", "T__10", "T__11", "T__12", "T__13", 
-                  "T__14", "T__15", "T__16", "INT", "RELATION_WORD", "WORD", 
-                  "BOOLEAN", "NUMBER", "VECTOR", "NL", "WS" ]
+    ruleNames = ["T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6",
+                 "T__7", "T__8", "T__9", "T__10", "T__11", "T__12", "T__13",
+                 "T__14", "T__15", "T__16", "INT", "RELATION_WORD", "WORD",
+                 "BOOLEAN", "NUMBER", "VECTOR", "NL", "WS"]
 
     grammarFileName = "UVL.g4"
 
-    def __init__(self, input=None, output:TextIO = sys.stdout):
+    def __init__(self, input=None, output: TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.9")
-        self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
+        self._interp = LexerATNSimulator(
+            self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None
-
 
     class UVLDenter(DenterHelper):
         def __init__(self, lexer, nl_token, indent_token, dedent_token, ignore_eof):
@@ -203,8 +202,6 @@ class UVLLexer(Lexer):
 
     def nextToken(self):
         if not self.denter:
-            self.denter = self.UVLDenter(self, self.NL, UVLParser.INDENT, UVLParser.DEDENT, True)
+            self.denter = self.UVLDenter(
+                self, self.NL, UVLParser.INDENT, UVLParser.DEDENT, True)
         return self.denter.next_token()
-
-
-

@@ -28,7 +28,7 @@ def nextToken(self):
 }
 
 // parser rules
-feature_model: imports? features constraints?;
+feature_model: imports? features constraints? EOF?;
 
 //features block
 features: 'features' INDENT child DEDENT;
@@ -69,7 +69,8 @@ excludes: WORD 'excludes' WORD;
 
 imports: 'imports' INDENT imp* DEDENT;
 
-imp: WORD ('as' WORD)? NL?;
+imp: imp_spec ('as' WORD)? NL?;
+imp_spec: WORD '.' WORD ('.' WORD)*;
 
 //lexer rules
 fragment INT: '0' | ([1-9][0-9]*);
