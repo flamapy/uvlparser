@@ -28,7 +28,12 @@ def nextToken(self):
 }
 
 // parser rules
-feature_model: imports? features constraints? EOF?;
+feature_model: namespace? imports? features constraints? EOF?;
+
+
+//namespace
+
+namespace: 'namespace' WORD NL*;
 
 //features block
 features: 'features' INDENT child DEDENT;
