@@ -125,75 +125,93 @@ class UVLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by UVLParser#constraint.
-    def enterConstraint(self, ctx:UVLParser.ConstraintContext):
+    # Enter a parse tree produced by UVLParser#andExp.
+    def enterAndExp(self, ctx:UVLParser.AndExpContext):
         pass
 
-    # Exit a parse tree produced by UVLParser#constraint.
-    def exitConstraint(self, ctx:UVLParser.ConstraintContext):
-        pass
-
-
-    # Enter a parse tree produced by UVLParser#negation.
-    def enterNegation(self, ctx:UVLParser.NegationContext):
-        pass
-
-    # Exit a parse tree produced by UVLParser#negation.
-    def exitNegation(self, ctx:UVLParser.NegationContext):
+    # Exit a parse tree produced by UVLParser#andExp.
+    def exitAndExp(self, ctx:UVLParser.AndExpContext):
         pass
 
 
-    # Enter a parse tree produced by UVLParser#conjunction.
-    def enterConjunction(self, ctx:UVLParser.ConjunctionContext):
+    # Enter a parse tree produced by UVLParser#parenthesisExp.
+    def enterParenthesisExp(self, ctx:UVLParser.ParenthesisExpContext):
         pass
 
-    # Exit a parse tree produced by UVLParser#conjunction.
-    def exitConjunction(self, ctx:UVLParser.ConjunctionContext):
-        pass
-
-
-    # Enter a parse tree produced by UVLParser#disjuction.
-    def enterDisjuction(self, ctx:UVLParser.DisjuctionContext):
-        pass
-
-    # Exit a parse tree produced by UVLParser#disjuction.
-    def exitDisjuction(self, ctx:UVLParser.DisjuctionContext):
+    # Exit a parse tree produced by UVLParser#parenthesisExp.
+    def exitParenthesisExp(self, ctx:UVLParser.ParenthesisExpContext):
         pass
 
 
-    # Enter a parse tree produced by UVLParser#implication.
-    def enterImplication(self, ctx:UVLParser.ImplicationContext):
+    # Enter a parse tree produced by UVLParser#term.
+    def enterTerm(self, ctx:UVLParser.TermContext):
         pass
 
-    # Exit a parse tree produced by UVLParser#implication.
-    def exitImplication(self, ctx:UVLParser.ImplicationContext):
-        pass
-
-
-    # Enter a parse tree produced by UVLParser#equivalence.
-    def enterEquivalence(self, ctx:UVLParser.EquivalenceContext):
-        pass
-
-    # Exit a parse tree produced by UVLParser#equivalence.
-    def exitEquivalence(self, ctx:UVLParser.EquivalenceContext):
+    # Exit a parse tree produced by UVLParser#term.
+    def exitTerm(self, ctx:UVLParser.TermContext):
         pass
 
 
-    # Enter a parse tree produced by UVLParser#requires.
-    def enterRequires(self, ctx:UVLParser.RequiresContext):
+    # Enter a parse tree produced by UVLParser#orExp.
+    def enterOrExp(self, ctx:UVLParser.OrExpContext):
         pass
 
-    # Exit a parse tree produced by UVLParser#requires.
-    def exitRequires(self, ctx:UVLParser.RequiresContext):
+    # Exit a parse tree produced by UVLParser#orExp.
+    def exitOrExp(self, ctx:UVLParser.OrExpContext):
         pass
 
 
-    # Enter a parse tree produced by UVLParser#excludes.
-    def enterExcludes(self, ctx:UVLParser.ExcludesContext):
+    # Enter a parse tree produced by UVLParser#logicalExp.
+    def enterLogicalExp(self, ctx:UVLParser.LogicalExpContext):
         pass
 
-    # Exit a parse tree produced by UVLParser#excludes.
-    def exitExcludes(self, ctx:UVLParser.ExcludesContext):
+    # Exit a parse tree produced by UVLParser#logicalExp.
+    def exitLogicalExp(self, ctx:UVLParser.LogicalExpContext):
+        pass
+
+
+    # Enter a parse tree produced by UVLParser#notExp.
+    def enterNotExp(self, ctx:UVLParser.NotExpContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#notExp.
+    def exitNotExp(self, ctx:UVLParser.NotExpContext):
+        pass
+
+
+    # Enter a parse tree produced by UVLParser#equivExp.
+    def enterEquivExp(self, ctx:UVLParser.EquivExpContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#equivExp.
+    def exitEquivExp(self, ctx:UVLParser.EquivExpContext):
+        pass
+
+
+    # Enter a parse tree produced by UVLParser#impliesExp.
+    def enterImpliesExp(self, ctx:UVLParser.ImpliesExpContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#impliesExp.
+    def exitImpliesExp(self, ctx:UVLParser.ImpliesExpContext):
+        pass
+
+
+    # Enter a parse tree produced by UVLParser#requiresExp.
+    def enterRequiresExp(self, ctx:UVLParser.RequiresExpContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#requiresExp.
+    def exitRequiresExp(self, ctx:UVLParser.RequiresExpContext):
+        pass
+
+
+    # Enter a parse tree produced by UVLParser#excludesExp.
+    def enterExcludesExp(self, ctx:UVLParser.ExcludesExpContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#excludesExp.
+    def exitExcludesExp(self, ctx:UVLParser.ExcludesExpContext):
         pass
 
 
