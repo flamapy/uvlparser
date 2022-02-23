@@ -1,13 +1,9 @@
-# Generated from UVL.g4 by ANTLR 4.9
+# Generated from UVL.g4 by ANTLR 4.7.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
+from typing.io import TextIO
 import sys
-if sys.version_info[1] > 5:
-	from typing import TextIO
-else:
-	from typing.io import TextIO
-
 
 def serializedATN():
     with StringIO() as buf:
@@ -187,10 +183,9 @@ class UVLParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9")
+        self.checkVersion("4.7.2")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
-
 
 
 
@@ -221,6 +216,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_feature_model
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFeature_model" ):
+                listener.enterFeature_model(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFeature_model" ):
+                listener.exitFeature_model(self)
 
 
 
@@ -274,7 +277,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class NamespaceContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -292,6 +294,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_namespace
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNamespace" ):
+                listener.enterNamespace(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNamespace" ):
+                listener.exitNamespace(self)
 
 
 
@@ -325,7 +335,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class FeaturesContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -344,6 +353,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_features
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFeatures" ):
+                listener.enterFeatures(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFeatures" ):
+                listener.exitFeatures(self)
 
 
 
@@ -369,7 +386,6 @@ class UVLParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class ChildContext(ParserRuleContext):
 
@@ -399,6 +415,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_child
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterChild" ):
+                listener.enterChild(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitChild" ):
+                listener.exitChild(self)
 
 
 
@@ -445,7 +469,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class RelationContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -474,6 +497,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_relation
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRelation" ):
+                listener.enterRelation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRelation" ):
+                listener.exitRelation(self)
 
 
 
@@ -520,7 +551,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Feature_specContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -540,6 +570,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_feature_spec
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFeature_spec" ):
+                listener.enterFeature_spec(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFeature_spec" ):
+                listener.exitFeature_spec(self)
 
 
 
@@ -577,7 +615,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class RefContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -592,6 +629,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_ref
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRef" ):
+                listener.enterRef(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRef" ):
+                listener.exitRef(self)
 
 
 
@@ -625,7 +670,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class AttributesContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -641,6 +685,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_attributes
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAttributes" ):
+                listener.enterAttributes(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAttributes" ):
+                listener.exitAttributes(self)
 
 
 
@@ -691,7 +743,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class AttributeContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -708,6 +759,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_attribute
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAttribute" ):
+                listener.enterAttribute(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAttribute" ):
+                listener.exitAttribute(self)
 
 
 
@@ -741,7 +800,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class KeyContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -753,6 +811,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_key
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterKey" ):
+                listener.enterKey(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitKey" ):
+                listener.exitKey(self)
 
 
 
@@ -772,7 +838,6 @@ class UVLParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class ValueContext(ParserRuleContext):
 
@@ -794,6 +859,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_value
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterValue" ):
+                listener.enterValue(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitValue" ):
+                listener.exitValue(self)
 
 
 
@@ -820,7 +893,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Relation_specContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -832,6 +904,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_relation_spec
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRelation_spec" ):
+                listener.enterRelation_spec(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRelation_spec" ):
+                listener.exitRelation_spec(self)
 
 
 
@@ -851,7 +931,6 @@ class UVLParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class ConstraintsContext(ParserRuleContext):
 
@@ -883,6 +962,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_constraints
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterConstraints" ):
+                listener.enterConstraints(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitConstraints" ):
+                listener.exitConstraints(self)
 
 
 
@@ -931,7 +1018,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ConstraintContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -968,6 +1054,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_constraint
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterConstraint" ):
+                listener.enterConstraint(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitConstraint" ):
+                listener.exitConstraint(self)
 
 
 
@@ -1031,7 +1125,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class NegationContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1043,6 +1136,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_negation
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNegation" ):
+                listener.enterNegation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNegation" ):
+                listener.exitNegation(self)
 
 
 
@@ -1065,7 +1166,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ConjunctionContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1080,6 +1180,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_conjunction
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterConjunction" ):
+                listener.enterConjunction(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitConjunction" ):
+                listener.exitConjunction(self)
 
 
 
@@ -1104,7 +1212,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class DisjuctionContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1119,6 +1226,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_disjuction
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDisjuction" ):
+                listener.enterDisjuction(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDisjuction" ):
+                listener.exitDisjuction(self)
 
 
 
@@ -1143,7 +1258,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ImplicationContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1158,6 +1272,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_implication
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterImplication" ):
+                listener.enterImplication(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitImplication" ):
+                listener.exitImplication(self)
 
 
 
@@ -1182,7 +1304,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class EquivalenceContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1197,6 +1318,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_equivalence
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterEquivalence" ):
+                listener.enterEquivalence(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitEquivalence" ):
+                listener.exitEquivalence(self)
 
 
 
@@ -1221,7 +1350,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class RequiresContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1236,6 +1364,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_requires
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRequires" ):
+                listener.enterRequires(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRequires" ):
+                listener.exitRequires(self)
 
 
 
@@ -1260,7 +1396,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ExcludesContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1275,6 +1410,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_excludes
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExcludes" ):
+                listener.enterExcludes(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExcludes" ):
+                listener.exitExcludes(self)
 
 
 
@@ -1299,7 +1442,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ImportsContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1321,6 +1463,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_imports
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterImports" ):
+                listener.enterImports(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitImports" ):
+                listener.exitImports(self)
 
 
 
@@ -1356,7 +1506,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ImpContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1375,6 +1524,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_imp
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterImp" ):
+                listener.enterImp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitImp" ):
+                listener.exitImp(self)
 
 
 
@@ -1414,7 +1571,6 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Imp_specContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1429,6 +1585,14 @@ class UVLParser ( Parser ):
 
         def getRuleIndex(self):
             return UVLParser.RULE_imp_spec
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterImp_spec" ):
+                listener.enterImp_spec(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitImp_spec" ):
+                listener.exitImp_spec(self)
 
 
 

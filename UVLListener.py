@@ -1,4 +1,4 @@
-# Generated from UVL.g4 by ANTLR 4.9
+# Generated from UVL.g4 by ANTLR 4.7.2
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .UVLParser import UVLParser
@@ -6,173 +6,221 @@ else:
     from UVLParser import UVLParser
 
 # This class defines a complete listener for a parse tree produced by UVLParser.
-
-
 class UVLListener(ParseTreeListener):
 
     # Enter a parse tree produced by UVLParser#feature_model.
-    def enterFeature_model(self, ctx: UVLParser.Feature_modelContext):
+    def enterFeature_model(self, ctx:UVLParser.Feature_modelContext):
         pass
 
     # Exit a parse tree produced by UVLParser#feature_model.
-    def exitFeature_model(self, ctx: UVLParser.Feature_modelContext):
+    def exitFeature_model(self, ctx:UVLParser.Feature_modelContext):
         pass
+
+
+    # Enter a parse tree produced by UVLParser#namespace.
+    def enterNamespace(self, ctx:UVLParser.NamespaceContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#namespace.
+    def exitNamespace(self, ctx:UVLParser.NamespaceContext):
+        pass
+
 
     # Enter a parse tree produced by UVLParser#features.
-    def enterFeatures(self, ctx: UVLParser.FeaturesContext):
-        root_feature = ctx.child()
-
-        relations = root_feature.relation()
-        for relation in relations:
-            print(relation.relation_spec().RELATION_WORD().getText())
-    # Exit a parse tree produced by UVLParser#features.
-
-    def exitFeatures(self, ctx: UVLParser.FeaturesContext):
+    def enterFeatures(self, ctx:UVLParser.FeaturesContext):
         pass
 
+    # Exit a parse tree produced by UVLParser#features.
+    def exitFeatures(self, ctx:UVLParser.FeaturesContext):
+        pass
+
+
     # Enter a parse tree produced by UVLParser#child.
-    def enterChild(self, ctx: UVLParser.ChildContext):
+    def enterChild(self, ctx:UVLParser.ChildContext):
         pass
 
     # Exit a parse tree produced by UVLParser#child.
-    def exitChild(self, ctx: UVLParser.ChildContext):
+    def exitChild(self, ctx:UVLParser.ChildContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#relation.
-    def enterRelation(self, ctx: UVLParser.RelationContext):
+    def enterRelation(self, ctx:UVLParser.RelationContext):
         pass
 
     # Exit a parse tree produced by UVLParser#relation.
-    def exitRelation(self, ctx: UVLParser.RelationContext):
+    def exitRelation(self, ctx:UVLParser.RelationContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#feature_spec.
-    def enterFeature_spec(self, ctx: UVLParser.Feature_specContext):
+    def enterFeature_spec(self, ctx:UVLParser.Feature_specContext):
         pass
 
     # Exit a parse tree produced by UVLParser#feature_spec.
-    def exitFeature_spec(self, ctx: UVLParser.Feature_specContext):
+    def exitFeature_spec(self, ctx:UVLParser.Feature_specContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#ref.
-    def enterRef(self, ctx: UVLParser.RefContext):
+    def enterRef(self, ctx:UVLParser.RefContext):
         pass
 
     # Exit a parse tree produced by UVLParser#ref.
-    def exitRef(self, ctx: UVLParser.RefContext):
+    def exitRef(self, ctx:UVLParser.RefContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#attributes.
-    def enterAttributes(self, ctx: UVLParser.AttributesContext):
+    def enterAttributes(self, ctx:UVLParser.AttributesContext):
         pass
 
     # Exit a parse tree produced by UVLParser#attributes.
-    def exitAttributes(self, ctx: UVLParser.AttributesContext):
+    def exitAttributes(self, ctx:UVLParser.AttributesContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#attribute.
-    def enterAttribute(self, ctx: UVLParser.AttributeContext):
+    def enterAttribute(self, ctx:UVLParser.AttributeContext):
         pass
 
     # Exit a parse tree produced by UVLParser#attribute.
-    def exitAttribute(self, ctx: UVLParser.AttributeContext):
+    def exitAttribute(self, ctx:UVLParser.AttributeContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#key.
-    def enterKey(self, ctx: UVLParser.KeyContext):
+    def enterKey(self, ctx:UVLParser.KeyContext):
         pass
 
     # Exit a parse tree produced by UVLParser#key.
-    def exitKey(self, ctx: UVLParser.KeyContext):
+    def exitKey(self, ctx:UVLParser.KeyContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#value.
-    def enterValue(self, ctx: UVLParser.ValueContext):
+    def enterValue(self, ctx:UVLParser.ValueContext):
         pass
 
     # Exit a parse tree produced by UVLParser#value.
-    def exitValue(self, ctx: UVLParser.ValueContext):
+    def exitValue(self, ctx:UVLParser.ValueContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#relation_spec.
-    def enterRelation_spec(self, ctx: UVLParser.Relation_specContext):
+    def enterRelation_spec(self, ctx:UVLParser.Relation_specContext):
         pass
 
     # Exit a parse tree produced by UVLParser#relation_spec.
-    def exitRelation_spec(self, ctx: UVLParser.Relation_specContext):
+    def exitRelation_spec(self, ctx:UVLParser.Relation_specContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#constraints.
-    def enterConstraints(self, ctx: UVLParser.ConstraintsContext):
+    def enterConstraints(self, ctx:UVLParser.ConstraintsContext):
         pass
 
     # Exit a parse tree produced by UVLParser#constraints.
-    def exitConstraints(self, ctx: UVLParser.ConstraintsContext):
+    def exitConstraints(self, ctx:UVLParser.ConstraintsContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#constraint.
-    def enterConstraint(self, ctx: UVLParser.ConstraintContext):
+    def enterConstraint(self, ctx:UVLParser.ConstraintContext):
         pass
 
     # Exit a parse tree produced by UVLParser#constraint.
-    def exitConstraint(self, ctx: UVLParser.ConstraintContext):
+    def exitConstraint(self, ctx:UVLParser.ConstraintContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#negation.
-    def enterNegation(self, ctx: UVLParser.NegationContext):
+    def enterNegation(self, ctx:UVLParser.NegationContext):
         pass
 
     # Exit a parse tree produced by UVLParser#negation.
-    def exitNegation(self, ctx: UVLParser.NegationContext):
+    def exitNegation(self, ctx:UVLParser.NegationContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#conjunction.
-    def enterConjunction(self, ctx: UVLParser.ConjunctionContext):
+    def enterConjunction(self, ctx:UVLParser.ConjunctionContext):
         pass
 
     # Exit a parse tree produced by UVLParser#conjunction.
-    def exitConjunction(self, ctx: UVLParser.ConjunctionContext):
+    def exitConjunction(self, ctx:UVLParser.ConjunctionContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#disjuction.
-    def enterDisjuction(self, ctx: UVLParser.DisjuctionContext):
+    def enterDisjuction(self, ctx:UVLParser.DisjuctionContext):
         pass
 
     # Exit a parse tree produced by UVLParser#disjuction.
-    def exitDisjuction(self, ctx: UVLParser.DisjuctionContext):
+    def exitDisjuction(self, ctx:UVLParser.DisjuctionContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#implication.
-    def enterImplication(self, ctx: UVLParser.ImplicationContext):
+    def enterImplication(self, ctx:UVLParser.ImplicationContext):
         pass
 
     # Exit a parse tree produced by UVLParser#implication.
-    def exitImplication(self, ctx: UVLParser.ImplicationContext):
+    def exitImplication(self, ctx:UVLParser.ImplicationContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#equivalence.
-    def enterEquivalence(self, ctx: UVLParser.EquivalenceContext):
+    def enterEquivalence(self, ctx:UVLParser.EquivalenceContext):
         pass
 
     # Exit a parse tree produced by UVLParser#equivalence.
-    def exitEquivalence(self, ctx: UVLParser.EquivalenceContext):
+    def exitEquivalence(self, ctx:UVLParser.EquivalenceContext):
         pass
 
+
+    # Enter a parse tree produced by UVLParser#requires.
+    def enterRequires(self, ctx:UVLParser.RequiresContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#requires.
+    def exitRequires(self, ctx:UVLParser.RequiresContext):
+        pass
+
+
+    # Enter a parse tree produced by UVLParser#excludes.
+    def enterExcludes(self, ctx:UVLParser.ExcludesContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#excludes.
+    def exitExcludes(self, ctx:UVLParser.ExcludesContext):
+        pass
+
+
     # Enter a parse tree produced by UVLParser#imports.
-    def enterImports(self, ctx: UVLParser.ImportsContext):
+    def enterImports(self, ctx:UVLParser.ImportsContext):
         pass
 
     # Exit a parse tree produced by UVLParser#imports.
-    def exitImports(self, ctx: UVLParser.ImportsContext):
+    def exitImports(self, ctx:UVLParser.ImportsContext):
         pass
 
+
     # Enter a parse tree produced by UVLParser#imp.
-    def enterImp(self, ctx: UVLParser.ImpContext):
+    def enterImp(self, ctx:UVLParser.ImpContext):
         pass
 
     # Exit a parse tree produced by UVLParser#imp.
-    def exitImp(self, ctx: UVLParser.ImpContext):
+    def exitImp(self, ctx:UVLParser.ImpContext):
         pass
 
 
-del UVLParser
+    # Enter a parse tree produced by UVLParser#imp_spec.
+    def enterImp_spec(self, ctx:UVLParser.Imp_specContext):
+        pass
+
+    # Exit a parse tree produced by UVLParser#imp_spec.
+    def exitImp_spec(self, ctx:UVLParser.Imp_specContext):
+        pass
+
+
