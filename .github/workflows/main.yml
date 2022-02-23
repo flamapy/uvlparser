@@ -18,7 +18,7 @@ jobs:
       - name: ANTLR prerequisites
         run: |
                 sudo apt-get install antlr4
-                pip install twine
+                pip install twine build
       - name: Compile     
         run: make build
       - name: Build and publish
