@@ -7,11 +7,9 @@ build:
 	sed -i "s/from UVLParser/from .UVLParser/g" UVLLexer.py
 	
 upload-testpypi:
-	cd uvlparser
 	python3 -m build
 	python3 -m twine upload --repository testpypi dist/*
 
 upload-pypi:
-	cd uvlparser
 	python3 -m build
 	python3 -m twine upload --repository pypi dist/*

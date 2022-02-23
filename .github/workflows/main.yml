@@ -26,4 +26,5 @@ jobs:
                 TWINE_USERNAME: ${{ github.secrets.PYPI_USERNAME }}
                 TWINE_PASSWORD: ${{ github.secrets.PYPI_PASSWORD }}
         run: |
+                python3 -m build
                 twine upload dist/*
