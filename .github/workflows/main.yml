@@ -1,6 +1,9 @@
 name: Antl compilation
 
-on: [push, pull_request]
+on: 
+  push:
+      branches:
+        - master
 
 jobs:
   build:
@@ -16,19 +19,15 @@ jobs:
         with:
           python-version: 3.9
       - name: ANTLR prerequisites
-        run: sudo apt-get install antlr4
+        run: |
+                sudo apt-get install antlr4
+                pip install twine build
       - name: Compile     
         run: make build
-      - name: Stage compiled files
-        run: git add UVLLexer.py UVLListener.py UVLParser.py
-      - name: commit changed files
-        run: | 
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git commit -m "Auto updating compile files"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-        
+      - name: Build and publish
+        env:
+                TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+                TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+                python3 -m build
+                twine upload dist/*
