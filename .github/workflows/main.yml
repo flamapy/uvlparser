@@ -15,4 +15,13 @@ jobs:
         run: sudo apt-get install antlr4
       - name: Compile     
         run: make build
-      
+      - name: Stage compiled files
+        run: git add UVLLexer.py UVLListener.py UVLParser.py
+      - name: commit changed files
+        run: git commit -m "Auto updating compile files"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+        
