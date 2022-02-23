@@ -1,4 +1,4 @@
-# Generated from UVL.g4 by ANTLR 4.9
+# Generated from UVL.g4 by ANTLR 4.7.2
 from antlr4 import *
 from io import StringIO
 from typing.io import TextIO
@@ -7,7 +7,6 @@ import sys
 
 from antlr_denter.DenterHelper import DenterHelper
 from .UVLParser import UVLParser
-
 
 
 def serializedATN():
@@ -191,7 +190,7 @@ class UVLLexer(Lexer):
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9")
+        self.checkVersion("4.7.2")
         self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None
