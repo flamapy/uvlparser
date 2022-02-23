@@ -7,93 +7,87 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\35")
-        buf.write("\u00db\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\37")
+        buf.write("\u00cb\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
-        buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
-        buf.write("\t\31\3\2\5\2\64\n\2\3\2\5\2\67\n\2\3\2\3\2\5\2;\n\2\3")
-        buf.write("\2\5\2>\n\2\3\3\3\3\3\3\7\3C\n\3\f\3\16\3F\13\3\3\4\3")
-        buf.write("\4\3\4\3\4\3\4\3\5\3\5\3\5\7\5P\n\5\f\5\16\5S\13\5\3\5")
-        buf.write("\5\5V\n\5\3\6\3\6\3\6\7\6[\n\6\f\6\16\6^\13\6\3\6\5\6")
-        buf.write("a\n\6\3\7\3\7\5\7e\n\7\3\7\5\7h\n\7\3\b\3\b\7\bl\n\b\f")
-        buf.write("\b\16\bo\13\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\7\tx\n\t\f\t")
-        buf.write("\16\t{\13\t\3\t\3\t\5\t\177\n\t\3\n\3\n\3\n\3\n\3\n\5")
-        buf.write("\n\u0086\n\n\3\13\3\13\3\f\3\f\3\r\3\r\3\16\3\16\3\16")
-        buf.write("\3\16\5\16\u0092\n\16\7\16\u0094\n\16\f\16\16\16\u0097")
-        buf.write("\13\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\5")
-        buf.write("\17\u00a2\n\17\3\20\3\20\3\20\3\21\3\21\3\21\3\21\3\22")
-        buf.write("\3\22\3\22\3\22\3\23\3\23\3\23\3\23\3\24\3\24\3\24\3\24")
-        buf.write("\3\25\3\25\3\25\3\25\3\26\3\26\3\26\3\26\3\27\3\27\3\27")
-        buf.write("\7\27\u00c2\n\27\f\27\16\27\u00c5\13\27\3\27\3\27\3\30")
-        buf.write("\3\30\3\30\5\30\u00cc\n\30\3\30\5\30\u00cf\n\30\3\31\3")
-        buf.write("\31\3\31\3\31\3\31\7\31\u00d6\n\31\f\31\16\31\u00d9\13")
-        buf.write("\31\3\31\2\2\32\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36")
-        buf.write(" \"$&(*,.\60\2\4\3\3\35\35\3\2\26\31\2\u00dd\2\63\3\2")
-        buf.write("\2\2\4?\3\2\2\2\6G\3\2\2\2\bL\3\2\2\2\nW\3\2\2\2\fb\3")
-        buf.write("\2\2\2\16m\3\2\2\2\20~\3\2\2\2\22\u0080\3\2\2\2\24\u0087")
-        buf.write("\3\2\2\2\26\u0089\3\2\2\2\30\u008b\3\2\2\2\32\u008d\3")
-        buf.write("\2\2\2\34\u00a1\3\2\2\2\36\u00a3\3\2\2\2 \u00a6\3\2\2")
-        buf.write("\2\"\u00aa\3\2\2\2$\u00ae\3\2\2\2&\u00b2\3\2\2\2(\u00b6")
-        buf.write("\3\2\2\2*\u00ba\3\2\2\2,\u00be\3\2\2\2.\u00c8\3\2\2\2")
-        buf.write("\60\u00d0\3\2\2\2\62\64\5\4\3\2\63\62\3\2\2\2\63\64\3")
-        buf.write("\2\2\2\64\66\3\2\2\2\65\67\5,\27\2\66\65\3\2\2\2\66\67")
-        buf.write("\3\2\2\2\678\3\2\2\28:\5\6\4\29;\5\32\16\2:9\3\2\2\2:")
-        buf.write(";\3\2\2\2;=\3\2\2\2<>\7\2\2\3=<\3\2\2\2=>\3\2\2\2>\3\3")
-        buf.write("\2\2\2?@\7\3\2\2@D\7\26\2\2AC\7\32\2\2BA\3\2\2\2CF\3\2")
-        buf.write("\2\2DB\3\2\2\2DE\3\2\2\2E\5\3\2\2\2FD\3\2\2\2GH\7\4\2")
-        buf.write("\2HI\7\34\2\2IJ\5\b\5\2JK\7\35\2\2K\7\3\2\2\2LU\5\f\7")
-        buf.write("\2MQ\7\34\2\2NP\5\n\6\2ON\3\2\2\2PS\3\2\2\2QO\3\2\2\2")
-        buf.write("QR\3\2\2\2RT\3\2\2\2SQ\3\2\2\2TV\t\2\2\2UM\3\2\2\2UV\3")
-        buf.write("\2\2\2V\t\3\2\2\2W`\5\30\r\2X\\\7\34\2\2Y[\5\b\5\2ZY\3")
-        buf.write("\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]\3\2\2\2]_\3\2\2\2^\\\3")
-        buf.write("\2\2\2_a\t\2\2\2`X\3\2\2\2`a\3\2\2\2a\13\3\2\2\2bd\5\16")
-        buf.write("\b\2ce\5\20\t\2dc\3\2\2\2de\3\2\2\2eg\3\2\2\2fh\7\32\2")
-        buf.write("\2gf\3\2\2\2gh\3\2\2\2h\r\3\2\2\2ij\7\26\2\2jl\7\5\2\2")
-        buf.write("ki\3\2\2\2lo\3\2\2\2mk\3\2\2\2mn\3\2\2\2np\3\2\2\2om\3")
-        buf.write("\2\2\2pq\7\26\2\2q\17\3\2\2\2r\177\7\6\2\2st\7\7\2\2t")
-        buf.write("y\5\22\n\2uv\7\b\2\2vx\5\22\n\2wu\3\2\2\2x{\3\2\2\2yw")
-        buf.write("\3\2\2\2yz\3\2\2\2z|\3\2\2\2{y\3\2\2\2|}\7\t\2\2}\177")
-        buf.write("\3\2\2\2~r\3\2\2\2~s\3\2\2\2\177\21\3\2\2\2\u0080\u0085")
-        buf.write("\5\24\13\2\u0081\u0082\7\n\2\2\u0082\u0083\5\26\f\2\u0083")
-        buf.write("\u0084\7\n\2\2\u0084\u0086\3\2\2\2\u0085\u0081\3\2\2\2")
-        buf.write("\u0085\u0086\3\2\2\2\u0086\23\3\2\2\2\u0087\u0088\7\26")
-        buf.write("\2\2\u0088\25\3\2\2\2\u0089\u008a\t\3\2\2\u008a\27\3\2")
-        buf.write("\2\2\u008b\u008c\7\25\2\2\u008c\31\3\2\2\2\u008d\u008e")
-        buf.write("\7\13\2\2\u008e\u0095\7\34\2\2\u008f\u0091\5\34\17\2\u0090")
-        buf.write("\u0092\7\32\2\2\u0091\u0090\3\2\2\2\u0091\u0092\3\2\2")
-        buf.write("\2\u0092\u0094\3\2\2\2\u0093\u008f\3\2\2\2\u0094\u0097")
-        buf.write("\3\2\2\2\u0095\u0093\3\2\2\2\u0095\u0096\3\2\2\2\u0096")
-        buf.write("\u0098\3\2\2\2\u0097\u0095\3\2\2\2\u0098\u0099\t\2\2\2")
-        buf.write("\u0099\33\3\2\2\2\u009a\u00a2\5\36\20\2\u009b\u00a2\5")
-        buf.write(" \21\2\u009c\u00a2\5\"\22\2\u009d\u00a2\5$\23\2\u009e")
-        buf.write("\u00a2\5&\24\2\u009f\u00a2\5(\25\2\u00a0\u00a2\5*\26\2")
-        buf.write("\u00a1\u009a\3\2\2\2\u00a1\u009b\3\2\2\2\u00a1\u009c\3")
-        buf.write("\2\2\2\u00a1\u009d\3\2\2\2\u00a1\u009e\3\2\2\2\u00a1\u009f")
-        buf.write("\3\2\2\2\u00a1\u00a0\3\2\2\2\u00a2\35\3\2\2\2\u00a3\u00a4")
-        buf.write("\7\f\2\2\u00a4\u00a5\7\26\2\2\u00a5\37\3\2\2\2\u00a6\u00a7")
-        buf.write("\7\26\2\2\u00a7\u00a8\7\r\2\2\u00a8\u00a9\7\26\2\2\u00a9")
-        buf.write("!\3\2\2\2\u00aa\u00ab\7\26\2\2\u00ab\u00ac\7\16\2\2\u00ac")
-        buf.write("\u00ad\7\26\2\2\u00ad#\3\2\2\2\u00ae\u00af\7\26\2\2\u00af")
-        buf.write("\u00b0\7\17\2\2\u00b0\u00b1\7\26\2\2\u00b1%\3\2\2\2\u00b2")
-        buf.write("\u00b3\7\26\2\2\u00b3\u00b4\7\20\2\2\u00b4\u00b5\7\26")
-        buf.write("\2\2\u00b5\'\3\2\2\2\u00b6\u00b7\7\26\2\2\u00b7\u00b8")
-        buf.write("\7\21\2\2\u00b8\u00b9\7\26\2\2\u00b9)\3\2\2\2\u00ba\u00bb")
-        buf.write("\7\26\2\2\u00bb\u00bc\7\22\2\2\u00bc\u00bd\7\26\2\2\u00bd")
-        buf.write("+\3\2\2\2\u00be\u00bf\7\23\2\2\u00bf\u00c3\7\34\2\2\u00c0")
-        buf.write("\u00c2\5.\30\2\u00c1\u00c0\3\2\2\2\u00c2\u00c5\3\2\2\2")
-        buf.write("\u00c3\u00c1\3\2\2\2\u00c3\u00c4\3\2\2\2\u00c4\u00c6\3")
-        buf.write("\2\2\2\u00c5\u00c3\3\2\2\2\u00c6\u00c7\7\35\2\2\u00c7")
-        buf.write("-\3\2\2\2\u00c8\u00cb\5\60\31\2\u00c9\u00ca\7\24\2\2\u00ca")
-        buf.write("\u00cc\7\26\2\2\u00cb\u00c9\3\2\2\2\u00cb\u00cc\3\2\2")
-        buf.write("\2\u00cc\u00ce\3\2\2\2\u00cd\u00cf\7\32\2\2\u00ce\u00cd")
-        buf.write("\3\2\2\2\u00ce\u00cf\3\2\2\2\u00cf/\3\2\2\2\u00d0\u00d1")
-        buf.write("\7\26\2\2\u00d1\u00d2\7\5\2\2\u00d2\u00d7\7\26\2\2\u00d3")
-        buf.write("\u00d4\7\5\2\2\u00d4\u00d6\7\26\2\2\u00d5\u00d3\3\2\2")
-        buf.write("\2\u00d6\u00d9\3\2\2\2\u00d7\u00d5\3\2\2\2\u00d7\u00d8")
-        buf.write("\3\2\2\2\u00d8\61\3\2\2\2\u00d9\u00d7\3\2\2\2\30\63\66")
-        buf.write(":=DQU\\`dgmy~\u0085\u0091\u0095\u00a1\u00c3\u00cb\u00ce")
-        buf.write("\u00d7")
+        buf.write("\3\2\5\2(\n\2\3\2\5\2+\n\2\3\2\3\2\5\2/\n\2\3\2\5\2\62")
+        buf.write("\n\2\3\3\3\3\3\3\7\3\67\n\3\f\3\16\3:\13\3\3\4\3\4\3\4")
+        buf.write("\3\4\3\4\3\5\3\5\3\5\7\5D\n\5\f\5\16\5G\13\5\3\5\5\5J")
+        buf.write("\n\5\3\6\3\6\3\6\7\6O\n\6\f\6\16\6R\13\6\3\6\5\6U\n\6")
+        buf.write("\3\7\3\7\5\7Y\n\7\3\7\5\7\\\n\7\3\7\5\7_\n\7\3\b\3\b\7")
+        buf.write("\bc\n\b\f\b\16\bf\13\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\7\t")
+        buf.write("o\n\t\f\t\16\tr\13\t\3\t\3\t\5\tv\n\t\3\n\3\n\3\n\3\n")
+        buf.write("\3\n\5\n}\n\n\3\13\3\13\3\f\3\f\3\r\3\r\3\16\3\16\3\16")
+        buf.write("\3\16\5\16\u0089\n\16\7\16\u008b\n\16\f\16\16\16\u008e")
+        buf.write("\13\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3")
+        buf.write("\17\5\17\u009a\n\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17")
+        buf.write("\3\17\3\17\3\17\7\17\u00a6\n\17\f\17\16\17\u00a9\13\17")
+        buf.write("\3\20\3\20\3\20\3\20\5\20\u00af\n\20\3\21\3\21\3\21\7")
+        buf.write("\21\u00b4\n\21\f\21\16\21\u00b7\13\21\3\21\3\21\3\22\3")
+        buf.write("\22\3\22\5\22\u00be\n\22\3\22\5\22\u00c1\n\22\3\23\3\23")
+        buf.write("\3\23\7\23\u00c6\n\23\f\23\16\23\u00c9\13\23\3\23\2\3")
+        buf.write("\34\24\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$\2\4")
+        buf.write("\3\3\37\37\3\2\30\33\2\u00d6\2\'\3\2\2\2\4\63\3\2\2\2")
+        buf.write("\6;\3\2\2\2\b@\3\2\2\2\nK\3\2\2\2\fV\3\2\2\2\16d\3\2\2")
+        buf.write("\2\20u\3\2\2\2\22w\3\2\2\2\24~\3\2\2\2\26\u0080\3\2\2")
+        buf.write("\2\30\u0082\3\2\2\2\32\u0084\3\2\2\2\34\u0099\3\2\2\2")
+        buf.write("\36\u00ae\3\2\2\2 \u00b0\3\2\2\2\"\u00ba\3\2\2\2$\u00c2")
+        buf.write("\3\2\2\2&(\5\4\3\2\'&\3\2\2\2\'(\3\2\2\2(*\3\2\2\2)+\5")
+        buf.write(" \21\2*)\3\2\2\2*+\3\2\2\2+,\3\2\2\2,.\5\6\4\2-/\5\32")
+        buf.write("\16\2.-\3\2\2\2./\3\2\2\2/\61\3\2\2\2\60\62\7\2\2\3\61")
+        buf.write("\60\3\2\2\2\61\62\3\2\2\2\62\3\3\2\2\2\63\64\7\3\2\2\64")
+        buf.write("8\7\30\2\2\65\67\7\34\2\2\66\65\3\2\2\2\67:\3\2\2\28\66")
+        buf.write("\3\2\2\289\3\2\2\29\5\3\2\2\2:8\3\2\2\2;<\7\4\2\2<=\7")
+        buf.write("\36\2\2=>\5\b\5\2>?\7\37\2\2?\7\3\2\2\2@I\5\f\7\2AE\7")
+        buf.write("\36\2\2BD\5\n\6\2CB\3\2\2\2DG\3\2\2\2EC\3\2\2\2EF\3\2")
+        buf.write("\2\2FH\3\2\2\2GE\3\2\2\2HJ\t\2\2\2IA\3\2\2\2IJ\3\2\2\2")
+        buf.write("J\t\3\2\2\2KT\5\30\r\2LP\7\36\2\2MO\5\b\5\2NM\3\2\2\2")
+        buf.write("OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2QS\3\2\2\2RP\3\2\2\2SU\t")
+        buf.write("\2\2\2TL\3\2\2\2TU\3\2\2\2U\13\3\2\2\2VX\5\16\b\2WY\7")
+        buf.write("\34\2\2XW\3\2\2\2XY\3\2\2\2Y[\3\2\2\2Z\\\5\20\t\2[Z\3")
+        buf.write("\2\2\2[\\\3\2\2\2\\^\3\2\2\2]_\7\34\2\2^]\3\2\2\2^_\3")
+        buf.write("\2\2\2_\r\3\2\2\2`a\7\30\2\2ac\7\5\2\2b`\3\2\2\2cf\3\2")
+        buf.write("\2\2db\3\2\2\2de\3\2\2\2eg\3\2\2\2fd\3\2\2\2gh\7\30\2")
+        buf.write("\2h\17\3\2\2\2iv\7\6\2\2jk\7\7\2\2kp\5\22\n\2lm\7\b\2")
+        buf.write("\2mo\5\22\n\2nl\3\2\2\2or\3\2\2\2pn\3\2\2\2pq\3\2\2\2")
+        buf.write("qs\3\2\2\2rp\3\2\2\2st\7\t\2\2tv\3\2\2\2ui\3\2\2\2uj\3")
+        buf.write("\2\2\2v\21\3\2\2\2w|\5\24\13\2xy\7\n\2\2yz\5\26\f\2z{")
+        buf.write("\7\n\2\2{}\3\2\2\2|x\3\2\2\2|}\3\2\2\2}\23\3\2\2\2~\177")
+        buf.write("\7\30\2\2\177\25\3\2\2\2\u0080\u0081\t\3\2\2\u0081\27")
+        buf.write("\3\2\2\2\u0082\u0083\7\27\2\2\u0083\31\3\2\2\2\u0084\u0085")
+        buf.write("\7\13\2\2\u0085\u008c\7\36\2\2\u0086\u0088\5\34\17\2\u0087")
+        buf.write("\u0089\7\34\2\2\u0088\u0087\3\2\2\2\u0088\u0089\3\2\2")
+        buf.write("\2\u0089\u008b\3\2\2\2\u008a\u0086\3\2\2\2\u008b\u008e")
+        buf.write("\3\2\2\2\u008c\u008a\3\2\2\2\u008c\u008d\3\2\2\2\u008d")
+        buf.write("\u008f\3\2\2\2\u008e\u008c\3\2\2\2\u008f\u0090\t\2\2\2")
+        buf.write("\u0090\33\3\2\2\2\u0091\u0092\b\17\1\2\u0092\u0093\7\f")
+        buf.write("\2\2\u0093\u0094\5\34\17\2\u0094\u0095\7\r\2\2\u0095\u009a")
+        buf.write("\3\2\2\2\u0096\u0097\7\20\2\2\u0097\u009a\5\34\17\7\u0098")
+        buf.write("\u009a\7\30\2\2\u0099\u0091\3\2\2\2\u0099\u0096\3\2\2")
+        buf.write("\2\u0099\u0098\3\2\2\2\u009a\u00a7\3\2\2\2\u009b\u009c")
+        buf.write("\f\6\2\2\u009c\u009d\7\21\2\2\u009d\u00a6\5\34\17\7\u009e")
+        buf.write("\u009f\f\5\2\2\u009f\u00a0\7\22\2\2\u00a0\u00a6\5\34\17")
+        buf.write("\6\u00a1\u00a2\f\4\2\2\u00a2\u00a3\5\36\20\2\u00a3\u00a4")
+        buf.write("\5\34\17\5\u00a4\u00a6\3\2\2\2\u00a5\u009b\3\2\2\2\u00a5")
+        buf.write("\u009e\3\2\2\2\u00a5\u00a1\3\2\2\2\u00a6\u00a9\3\2\2\2")
+        buf.write("\u00a7\u00a5\3\2\2\2\u00a7\u00a8\3\2\2\2\u00a8\35\3\2")
+        buf.write("\2\2\u00a9\u00a7\3\2\2\2\u00aa\u00af\7\23\2\2\u00ab\u00af")
+        buf.write("\7\24\2\2\u00ac\u00af\7\25\2\2\u00ad\u00af\7\26\2\2\u00ae")
+        buf.write("\u00aa\3\2\2\2\u00ae\u00ab\3\2\2\2\u00ae\u00ac\3\2\2\2")
+        buf.write("\u00ae\u00ad\3\2\2\2\u00af\37\3\2\2\2\u00b0\u00b1\7\16")
+        buf.write("\2\2\u00b1\u00b5\7\36\2\2\u00b2\u00b4\5\"\22\2\u00b3\u00b2")
+        buf.write("\3\2\2\2\u00b4\u00b7\3\2\2\2\u00b5\u00b3\3\2\2\2\u00b5")
+        buf.write("\u00b6\3\2\2\2\u00b6\u00b8\3\2\2\2\u00b7\u00b5\3\2\2\2")
+        buf.write("\u00b8\u00b9\7\37\2\2\u00b9!\3\2\2\2\u00ba\u00bd\5$\23")
+        buf.write("\2\u00bb\u00bc\7\17\2\2\u00bc\u00be\7\30\2\2\u00bd\u00bb")
+        buf.write("\3\2\2\2\u00bd\u00be\3\2\2\2\u00be\u00c0\3\2\2\2\u00bf")
+        buf.write("\u00c1\7\34\2\2\u00c0\u00bf\3\2\2\2\u00c0\u00c1\3\2\2")
+        buf.write("\2\u00c1#\3\2\2\2\u00c2\u00c7\7\30\2\2\u00c3\u00c4\7\5")
+        buf.write("\2\2\u00c4\u00c6\7\30\2\2\u00c5\u00c3\3\2\2\2\u00c6\u00c9")
+        buf.write("\3\2\2\2\u00c7\u00c5\3\2\2\2\u00c7\u00c8\3\2\2\2\u00c8")
+        buf.write("%\3\2\2\2\u00c9\u00c7\3\2\2\2\34\'*.\618EIPTX[^dpu|\u0088")
+        buf.write("\u008c\u0099\u00a5\u00a7\u00ae\u00b5\u00bd\u00c0\u00c7")
         return buf.getvalue()
 
 
@@ -108,15 +102,15 @@ class UVLParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'namespace'", "'features'", "'.'", "'{}'", 
-                     "'{'", "','", "'}'", "'\"'", "'constraints'", "'!'", 
-                     "'&'", "'|'", "'=>'", "'<=>'", "'requires'", "'excludes'", 
-                     "'imports'", "'as'" ]
+                     "'{'", "','", "'}'", "'\"'", "'constraints'", "'('", 
+                     "')'", "'imports'", "'as'", "'!'", "'&'", "'|'", "'<=>'", 
+                     "'=>'", "'requires'", "'excludes'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "RELATION_WORD", 
+                      "<INVALID>", "<INVALID>", "NOT", "AND", "OR", "EQUIVALENCE", 
+                      "IMPLICATION", "REQUIRES", "EXCLUDES", "RELATION_WORD", 
                       "WORD", "BOOLEAN", "NUMBER", "VECTOR", "NL", "WS", 
                       "INDENT", "DEDENT" ]
 
@@ -134,23 +128,15 @@ class UVLParser ( Parser ):
     RULE_relation_spec = 11
     RULE_constraints = 12
     RULE_constraint = 13
-    RULE_negation = 14
-    RULE_conjunction = 15
-    RULE_disjuction = 16
-    RULE_implication = 17
-    RULE_equivalence = 18
-    RULE_requires = 19
-    RULE_excludes = 20
-    RULE_imports = 21
-    RULE_imp = 22
-    RULE_imp_spec = 23
+    RULE_logical_operator = 14
+    RULE_imports = 15
+    RULE_imp = 16
+    RULE_imp_spec = 17
 
     ruleNames =  [ "feature_model", "namespace", "features", "child", "relation", 
                    "feature_spec", "ref", "attributes", "attribute", "key", 
                    "value", "relation_spec", "constraints", "constraint", 
-                   "negation", "conjunction", "disjuction", "implication", 
-                   "equivalence", "requires", "excludes", "imports", "imp", 
-                   "imp_spec" ]
+                   "logical_operator", "imports", "imp", "imp_spec" ]
 
     EOF = Token.EOF
     T__0=1
@@ -166,20 +152,22 @@ class UVLParser ( Parser ):
     T__10=11
     T__11=12
     T__12=13
-    T__13=14
-    T__14=15
-    T__15=16
-    T__16=17
-    T__17=18
-    RELATION_WORD=19
-    WORD=20
-    BOOLEAN=21
-    NUMBER=22
-    VECTOR=23
-    NL=24
-    WS=25
-    INDENT=26
-    DEDENT=27
+    NOT=14
+    AND=15
+    OR=16
+    EQUIVALENCE=17
+    IMPLICATION=18
+    REQUIRES=19
+    EXCLUDES=20
+    RELATION_WORD=21
+    WORD=22
+    BOOLEAN=23
+    NUMBER=24
+    VECTOR=25
+    NL=26
+    WS=27
+    INDENT=28
+    DEDENT=29
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -235,37 +223,37 @@ class UVLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 49
+            self.state = 37
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==UVLParser.T__0:
-                self.state = 48
+                self.state = 36
                 self.namespace()
 
 
-            self.state = 52
+            self.state = 40
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==UVLParser.T__16:
-                self.state = 51
+            if _la==UVLParser.T__11:
+                self.state = 39
                 self.imports()
 
 
-            self.state = 54
+            self.state = 42
             self.features()
-            self.state = 56
+            self.state = 44
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==UVLParser.T__8:
-                self.state = 55
+                self.state = 43
                 self.constraints()
 
 
-            self.state = 59
+            self.state = 47
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
-                self.state = 58
+                self.state = 46
                 self.match(UVLParser.EOF)
 
 
@@ -313,17 +301,17 @@ class UVLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 61
+            self.state = 49
             self.match(UVLParser.T__0)
-            self.state = 62
+            self.state = 50
             self.match(UVLParser.WORD)
-            self.state = 66
+            self.state = 54
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==UVLParser.NL:
-                self.state = 63
+                self.state = 51
                 self.match(UVLParser.NL)
-                self.state = 68
+                self.state = 56
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -371,13 +359,13 @@ class UVLParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_features)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 69
+            self.state = 57
             self.match(UVLParser.T__1)
-            self.state = 70
+            self.state = 58
             self.match(UVLParser.INDENT)
-            self.state = 71
+            self.state = 59
             self.child()
-            self.state = 72
+            self.state = 60
             self.match(UVLParser.DEDENT)
         except RecognitionException as re:
             localctx.exception = re
@@ -434,25 +422,25 @@ class UVLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 74
+            self.state = 62
             self.feature_spec()
-            self.state = 83
+            self.state = 71
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==UVLParser.INDENT:
-                self.state = 75
+                self.state = 63
                 self.match(UVLParser.INDENT)
-                self.state = 79
+                self.state = 67
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==UVLParser.RELATION_WORD:
-                    self.state = 76
+                    self.state = 64
                     self.relation()
-                    self.state = 81
+                    self.state = 69
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 82
+                self.state = 70
                 _la = self._input.LA(1)
                 if not(_la==UVLParser.EOF or _la==UVLParser.DEDENT):
                     self._errHandler.recoverInline(self)
@@ -516,25 +504,25 @@ class UVLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 85
+            self.state = 73
             self.relation_spec()
-            self.state = 94
+            self.state = 82
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==UVLParser.INDENT:
-                self.state = 86
+                self.state = 74
                 self.match(UVLParser.INDENT)
-                self.state = 90
+                self.state = 78
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==UVLParser.WORD:
-                    self.state = 87
+                    self.state = 75
                     self.child()
-                    self.state = 92
+                    self.state = 80
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 93
+                self.state = 81
                 _la = self._input.LA(1)
                 if not(_la==UVLParser.EOF or _la==UVLParser.DEDENT):
                     self._errHandler.recoverInline(self)
@@ -561,12 +549,15 @@ class UVLParser ( Parser ):
             return self.getTypedRuleContext(UVLParser.RefContext,0)
 
 
+        def NL(self, i:int=None):
+            if i is None:
+                return self.getTokens(UVLParser.NL)
+            else:
+                return self.getToken(UVLParser.NL, i)
+
         def attributes(self):
             return self.getTypedRuleContext(UVLParser.AttributesContext,0)
 
-
-        def NL(self):
-            return self.getToken(UVLParser.NL, 0)
 
         def getRuleIndex(self):
             return UVLParser.RULE_feature_spec
@@ -589,21 +580,29 @@ class UVLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 96
+            self.state = 84
             self.ref()
-            self.state = 98
+            self.state = 86
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
+            if la_ == 1:
+                self.state = 85
+                self.match(UVLParser.NL)
+
+
+            self.state = 89
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==UVLParser.T__3 or _la==UVLParser.T__4:
-                self.state = 97
+                self.state = 88
                 self.attributes()
 
 
-            self.state = 101
+            self.state = 92
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==UVLParser.NL:
-                self.state = 100
+                self.state = 91
                 self.match(UVLParser.NL)
 
 
@@ -647,20 +646,20 @@ class UVLParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_ref)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 107
+            self.state = 98
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 103
+                    self.state = 94
                     self.match(UVLParser.WORD)
-                    self.state = 104
+                    self.state = 95
                     self.match(UVLParser.T__2) 
-                self.state = 109
+                self.state = 100
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
 
-            self.state = 110
+            self.state = 101
             self.match(UVLParser.WORD)
         except RecognitionException as re:
             localctx.exception = re
@@ -703,33 +702,33 @@ class UVLParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_attributes)
         self._la = 0 # Token type
         try:
-            self.state = 124
+            self.state = 115
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [UVLParser.T__3]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 112
+                self.state = 103
                 self.match(UVLParser.T__3)
                 pass
             elif token in [UVLParser.T__4]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 113
+                self.state = 104
                 self.match(UVLParser.T__4)
-                self.state = 114
+                self.state = 105
                 self.attribute()
-                self.state = 119
+                self.state = 110
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==UVLParser.T__5:
-                    self.state = 115
+                    self.state = 106
                     self.match(UVLParser.T__5)
-                    self.state = 116
+                    self.state = 107
                     self.attribute()
-                    self.state = 121
+                    self.state = 112
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 122
+                self.state = 113
                 self.match(UVLParser.T__6)
                 pass
             else:
@@ -778,17 +777,17 @@ class UVLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 126
+            self.state = 117
             self.key()
-            self.state = 131
+            self.state = 122
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==UVLParser.T__7:
-                self.state = 127
+                self.state = 118
                 self.match(UVLParser.T__7)
-                self.state = 128
+                self.state = 119
                 self.value()
-                self.state = 129
+                self.state = 120
                 self.match(UVLParser.T__7)
 
 
@@ -829,7 +828,7 @@ class UVLParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_key)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 133
+            self.state = 124
             self.match(UVLParser.WORD)
         except RecognitionException as re:
             localctx.exception = re
@@ -878,7 +877,7 @@ class UVLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 135
+            self.state = 126
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << UVLParser.WORD) | (1 << UVLParser.BOOLEAN) | (1 << UVLParser.NUMBER) | (1 << UVLParser.VECTOR))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -922,7 +921,7 @@ class UVLParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_relation_spec)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 137
+            self.state = 128
             self.match(UVLParser.RELATION_WORD)
         except RecognitionException as re:
             localctx.exception = re
@@ -981,29 +980,29 @@ class UVLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 139
+            self.state = 130
             self.match(UVLParser.T__8)
-            self.state = 140
+            self.state = 131
             self.match(UVLParser.INDENT)
-            self.state = 147
+            self.state = 138
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==UVLParser.T__9 or _la==UVLParser.WORD:
-                self.state = 141
-                self.constraint()
-                self.state = 143
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << UVLParser.T__9) | (1 << UVLParser.NOT) | (1 << UVLParser.WORD))) != 0):
+                self.state = 132
+                self.constraint(0)
+                self.state = 134
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==UVLParser.NL:
-                    self.state = 142
+                    self.state = 133
                     self.match(UVLParser.NL)
 
 
-                self.state = 149
+                self.state = 140
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 150
+            self.state = 141
             _la = self._input.LA(1)
             if not(_la==UVLParser.EOF or _la==UVLParser.DEDENT):
                 self._errHandler.recoverInline(self)
@@ -1024,416 +1023,378 @@ class UVLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def negation(self):
-            return self.getTypedRuleContext(UVLParser.NegationContext,0)
-
-
-        def conjunction(self):
-            return self.getTypedRuleContext(UVLParser.ConjunctionContext,0)
-
-
-        def disjuction(self):
-            return self.getTypedRuleContext(UVLParser.DisjuctionContext,0)
-
-
-        def implication(self):
-            return self.getTypedRuleContext(UVLParser.ImplicationContext,0)
-
-
-        def equivalence(self):
-            return self.getTypedRuleContext(UVLParser.EquivalenceContext,0)
-
-
-        def requires(self):
-            return self.getTypedRuleContext(UVLParser.RequiresContext,0)
-
-
-        def excludes(self):
-            return self.getTypedRuleContext(UVLParser.ExcludesContext,0)
-
 
         def getRuleIndex(self):
             return UVLParser.RULE_constraint
 
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+    class AndExpContext(ConstraintContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.ConstraintContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def constraint(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(UVLParser.ConstraintContext)
+            else:
+                return self.getTypedRuleContext(UVLParser.ConstraintContext,i)
+
+        def AND(self):
+            return self.getToken(UVLParser.AND, 0)
+
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConstraint" ):
-                listener.enterConstraint(self)
+            if hasattr( listener, "enterAndExp" ):
+                listener.enterAndExp(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConstraint" ):
-                listener.exitConstraint(self)
+            if hasattr( listener, "exitAndExp" ):
+                listener.exitAndExp(self)
 
 
+    class ParenthesisExpContext(ConstraintContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.ConstraintContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def constraint(self):
+            return self.getTypedRuleContext(UVLParser.ConstraintContext,0)
 
 
-    def constraint(self):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterParenthesisExp" ):
+                listener.enterParenthesisExp(self)
 
-        localctx = UVLParser.ConstraintContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 26, self.RULE_constraint)
-        try:
-            self.state = 159
-            self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,17,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 152
-                self.negation()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 153
-                self.conjunction()
-                pass
-
-            elif la_ == 3:
-                self.enterOuterAlt(localctx, 3)
-                self.state = 154
-                self.disjuction()
-                pass
-
-            elif la_ == 4:
-                self.enterOuterAlt(localctx, 4)
-                self.state = 155
-                self.implication()
-                pass
-
-            elif la_ == 5:
-                self.enterOuterAlt(localctx, 5)
-                self.state = 156
-                self.equivalence()
-                pass
-
-            elif la_ == 6:
-                self.enterOuterAlt(localctx, 6)
-                self.state = 157
-                self.requires()
-                pass
-
-            elif la_ == 7:
-                self.enterOuterAlt(localctx, 7)
-                self.state = 158
-                self.excludes()
-                pass
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitParenthesisExp" ):
+                listener.exitParenthesisExp(self)
 
 
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
+    class TermContext(ConstraintContext):
 
-    class NegationContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.ConstraintContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def WORD(self):
             return self.getToken(UVLParser.WORD, 0)
 
-        def getRuleIndex(self):
-            return UVLParser.RULE_negation
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNegation" ):
-                listener.enterNegation(self)
+            if hasattr( listener, "enterTerm" ):
+                listener.enterTerm(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNegation" ):
-                listener.exitNegation(self)
+            if hasattr( listener, "exitTerm" ):
+                listener.exitTerm(self)
 
 
+    class OrExpContext(ConstraintContext):
 
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.ConstraintContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
-    def negation(self):
-
-        localctx = UVLParser.NegationContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_negation)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 161
-            self.match(UVLParser.T__9)
-            self.state = 162
-            self.match(UVLParser.WORD)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class ConjunctionContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def WORD(self, i:int=None):
+        def constraint(self, i:int=None):
             if i is None:
-                return self.getTokens(UVLParser.WORD)
+                return self.getTypedRuleContexts(UVLParser.ConstraintContext)
             else:
-                return self.getToken(UVLParser.WORD, i)
+                return self.getTypedRuleContext(UVLParser.ConstraintContext,i)
 
-        def getRuleIndex(self):
-            return UVLParser.RULE_conjunction
+        def OR(self):
+            return self.getToken(UVLParser.OR, 0)
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConjunction" ):
-                listener.enterConjunction(self)
+            if hasattr( listener, "enterOrExp" ):
+                listener.enterOrExp(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConjunction" ):
-                listener.exitConjunction(self)
+            if hasattr( listener, "exitOrExp" ):
+                listener.exitOrExp(self)
+
+
+    class LogicalExpContext(ConstraintContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.ConstraintContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def constraint(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(UVLParser.ConstraintContext)
+            else:
+                return self.getTypedRuleContext(UVLParser.ConstraintContext,i)
+
+        def logical_operator(self):
+            return self.getTypedRuleContext(UVLParser.Logical_operatorContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLogicalExp" ):
+                listener.enterLogicalExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLogicalExp" ):
+                listener.exitLogicalExp(self)
+
+
+    class NotExpContext(ConstraintContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.ConstraintContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def NOT(self):
+            return self.getToken(UVLParser.NOT, 0)
+        def constraint(self):
+            return self.getTypedRuleContext(UVLParser.ConstraintContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNotExp" ):
+                listener.enterNotExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNotExp" ):
+                listener.exitNotExp(self)
 
 
 
-
-    def conjunction(self):
-
-        localctx = UVLParser.ConjunctionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_conjunction)
+    def constraint(self, _p:int=0):
+        _parentctx = self._ctx
+        _parentState = self.state
+        localctx = UVLParser.ConstraintContext(self, self._ctx, _parentState)
+        _prevctx = localctx
+        _startState = 26
+        self.enterRecursionRule(localctx, 26, self.RULE_constraint, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 164
-            self.match(UVLParser.WORD)
+            self.state = 151
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [UVLParser.T__9]:
+                localctx = UVLParser.ParenthesisExpContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+
+                self.state = 144
+                self.match(UVLParser.T__9)
+                self.state = 145
+                self.constraint(0)
+                self.state = 146
+                self.match(UVLParser.T__10)
+                pass
+            elif token in [UVLParser.NOT]:
+                localctx = UVLParser.NotExpContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 148
+                self.match(UVLParser.NOT)
+                self.state = 149
+                self.constraint(5)
+                pass
+            elif token in [UVLParser.WORD]:
+                localctx = UVLParser.TermContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 150
+                self.match(UVLParser.WORD)
+                pass
+            else:
+                raise NoViableAltException(self)
+
+            self._ctx.stop = self._input.LT(-1)
             self.state = 165
-            self.match(UVLParser.T__10)
-            self.state = 166
-            self.match(UVLParser.WORD)
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,20,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    if self._parseListeners is not None:
+                        self.triggerExitRuleEvent()
+                    _prevctx = localctx
+                    self.state = 163
+                    self._errHandler.sync(self)
+                    la_ = self._interp.adaptivePredict(self._input,19,self._ctx)
+                    if la_ == 1:
+                        localctx = UVLParser.AndExpContext(self, UVLParser.ConstraintContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_constraint)
+                        self.state = 153
+                        if not self.precpred(self._ctx, 4):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
+                        self.state = 154
+                        self.match(UVLParser.AND)
+                        self.state = 155
+                        self.constraint(5)
+                        pass
+
+                    elif la_ == 2:
+                        localctx = UVLParser.OrExpContext(self, UVLParser.ConstraintContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_constraint)
+                        self.state = 156
+                        if not self.precpred(self._ctx, 3):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
+                        self.state = 157
+                        self.match(UVLParser.OR)
+                        self.state = 158
+                        self.constraint(4)
+                        pass
+
+                    elif la_ == 3:
+                        localctx = UVLParser.LogicalExpContext(self, UVLParser.ConstraintContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_constraint)
+                        self.state = 159
+                        if not self.precpred(self._ctx, 2):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
+                        self.state = 160
+                        self.logical_operator()
+                        self.state = 161
+                        self.constraint(3)
+                        pass
+
+             
+                self.state = 167
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,20,self._ctx)
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
             self._errHandler.recover(self, re)
         finally:
-            self.exitRule()
+            self.unrollRecursionContexts(_parentctx)
         return localctx
 
-    class DisjuctionContext(ParserRuleContext):
+    class Logical_operatorContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def WORD(self, i:int=None):
-            if i is None:
-                return self.getTokens(UVLParser.WORD)
-            else:
-                return self.getToken(UVLParser.WORD, i)
 
         def getRuleIndex(self):
-            return UVLParser.RULE_disjuction
+            return UVLParser.RULE_logical_operator
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class RequiresExpContext(Logical_operatorContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.Logical_operatorContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def REQUIRES(self):
+            return self.getToken(UVLParser.REQUIRES, 0)
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDisjuction" ):
-                listener.enterDisjuction(self)
+            if hasattr( listener, "enterRequiresExp" ):
+                listener.enterRequiresExp(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDisjuction" ):
-                listener.exitDisjuction(self)
+            if hasattr( listener, "exitRequiresExp" ):
+                listener.exitRequiresExp(self)
 
 
+    class EquivExpContext(Logical_operatorContext):
 
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.Logical_operatorContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
-    def disjuction(self):
-
-        localctx = UVLParser.DisjuctionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 32, self.RULE_disjuction)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 168
-            self.match(UVLParser.WORD)
-            self.state = 169
-            self.match(UVLParser.T__11)
-            self.state = 170
-            self.match(UVLParser.WORD)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class ImplicationContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def WORD(self, i:int=None):
-            if i is None:
-                return self.getTokens(UVLParser.WORD)
-            else:
-                return self.getToken(UVLParser.WORD, i)
-
-        def getRuleIndex(self):
-            return UVLParser.RULE_implication
+        def EQUIVALENCE(self):
+            return self.getToken(UVLParser.EQUIVALENCE, 0)
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImplication" ):
-                listener.enterImplication(self)
+            if hasattr( listener, "enterEquivExp" ):
+                listener.enterEquivExp(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImplication" ):
-                listener.exitImplication(self)
+            if hasattr( listener, "exitEquivExp" ):
+                listener.exitEquivExp(self)
+
+
+    class ExcludesExpContext(Logical_operatorContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.Logical_operatorContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def EXCLUDES(self):
+            return self.getToken(UVLParser.EXCLUDES, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExcludesExp" ):
+                listener.enterExcludesExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExcludesExp" ):
+                listener.exitExcludesExp(self)
+
+
+    class ImpliesExpContext(Logical_operatorContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a UVLParser.Logical_operatorContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def IMPLICATION(self):
+            return self.getToken(UVLParser.IMPLICATION, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterImpliesExp" ):
+                listener.enterImpliesExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitImpliesExp" ):
+                listener.exitImpliesExp(self)
 
 
 
+    def logical_operator(self):
 
-    def implication(self):
-
-        localctx = UVLParser.ImplicationContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 34, self.RULE_implication)
+        localctx = UVLParser.Logical_operatorContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 28, self.RULE_logical_operator)
         try:
-            self.enterOuterAlt(localctx, 1)
             self.state = 172
-            self.match(UVLParser.WORD)
-            self.state = 173
-            self.match(UVLParser.T__12)
-            self.state = 174
-            self.match(UVLParser.WORD)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class EquivalenceContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def WORD(self, i:int=None):
-            if i is None:
-                return self.getTokens(UVLParser.WORD)
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [UVLParser.EQUIVALENCE]:
+                localctx = UVLParser.EquivExpContext(self, localctx)
+                self.enterOuterAlt(localctx, 1)
+                self.state = 168
+                self.match(UVLParser.EQUIVALENCE)
+                pass
+            elif token in [UVLParser.IMPLICATION]:
+                localctx = UVLParser.ImpliesExpContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 169
+                self.match(UVLParser.IMPLICATION)
+                pass
+            elif token in [UVLParser.REQUIRES]:
+                localctx = UVLParser.RequiresExpContext(self, localctx)
+                self.enterOuterAlt(localctx, 3)
+                self.state = 170
+                self.match(UVLParser.REQUIRES)
+                pass
+            elif token in [UVLParser.EXCLUDES]:
+                localctx = UVLParser.ExcludesExpContext(self, localctx)
+                self.enterOuterAlt(localctx, 4)
+                self.state = 171
+                self.match(UVLParser.EXCLUDES)
+                pass
             else:
-                return self.getToken(UVLParser.WORD, i)
+                raise NoViableAltException(self)
 
-        def getRuleIndex(self):
-            return UVLParser.RULE_equivalence
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEquivalence" ):
-                listener.enterEquivalence(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEquivalence" ):
-                listener.exitEquivalence(self)
-
-
-
-
-    def equivalence(self):
-
-        localctx = UVLParser.EquivalenceContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 36, self.RULE_equivalence)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 176
-            self.match(UVLParser.WORD)
-            self.state = 177
-            self.match(UVLParser.T__13)
-            self.state = 178
-            self.match(UVLParser.WORD)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class RequiresContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def WORD(self, i:int=None):
-            if i is None:
-                return self.getTokens(UVLParser.WORD)
-            else:
-                return self.getToken(UVLParser.WORD, i)
-
-        def getRuleIndex(self):
-            return UVLParser.RULE_requires
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRequires" ):
-                listener.enterRequires(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRequires" ):
-                listener.exitRequires(self)
-
-
-
-
-    def requires(self):
-
-        localctx = UVLParser.RequiresContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 38, self.RULE_requires)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 180
-            self.match(UVLParser.WORD)
-            self.state = 181
-            self.match(UVLParser.T__14)
-            self.state = 182
-            self.match(UVLParser.WORD)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class ExcludesContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def WORD(self, i:int=None):
-            if i is None:
-                return self.getTokens(UVLParser.WORD)
-            else:
-                return self.getToken(UVLParser.WORD, i)
-
-        def getRuleIndex(self):
-            return UVLParser.RULE_excludes
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExcludes" ):
-                listener.enterExcludes(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExcludes" ):
-                listener.exitExcludes(self)
-
-
-
-
-    def excludes(self):
-
-        localctx = UVLParser.ExcludesContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 40, self.RULE_excludes)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 184
-            self.match(UVLParser.WORD)
-            self.state = 185
-            self.match(UVLParser.T__15)
-            self.state = 186
-            self.match(UVLParser.WORD)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1478,25 +1439,25 @@ class UVLParser ( Parser ):
     def imports(self):
 
         localctx = UVLParser.ImportsContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 42, self.RULE_imports)
+        self.enterRule(localctx, 30, self.RULE_imports)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 188
-            self.match(UVLParser.T__16)
-            self.state = 189
+            self.state = 174
+            self.match(UVLParser.T__11)
+            self.state = 175
             self.match(UVLParser.INDENT)
-            self.state = 193
+            self.state = 179
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==UVLParser.WORD:
-                self.state = 190
+                self.state = 176
                 self.imp()
-                self.state = 195
+                self.state = 181
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 196
+            self.state = 182
             self.match(UVLParser.DEDENT)
         except RecognitionException as re:
             localctx.exception = re
@@ -1539,27 +1500,27 @@ class UVLParser ( Parser ):
     def imp(self):
 
         localctx = UVLParser.ImpContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 44, self.RULE_imp)
+        self.enterRule(localctx, 32, self.RULE_imp)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 198
+            self.state = 184
             self.imp_spec()
-            self.state = 201
+            self.state = 187
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==UVLParser.T__17:
-                self.state = 199
-                self.match(UVLParser.T__17)
-                self.state = 200
+            if _la==UVLParser.T__12:
+                self.state = 185
+                self.match(UVLParser.T__12)
+                self.state = 186
                 self.match(UVLParser.WORD)
 
 
-            self.state = 204
+            self.state = 190
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==UVLParser.NL:
-                self.state = 203
+                self.state = 189
                 self.match(UVLParser.NL)
 
 
@@ -1600,25 +1561,21 @@ class UVLParser ( Parser ):
     def imp_spec(self):
 
         localctx = UVLParser.Imp_specContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 46, self.RULE_imp_spec)
+        self.enterRule(localctx, 34, self.RULE_imp_spec)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 206
+            self.state = 192
             self.match(UVLParser.WORD)
-            self.state = 207
-            self.match(UVLParser.T__2)
-            self.state = 208
-            self.match(UVLParser.WORD)
-            self.state = 213
+            self.state = 197
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==UVLParser.T__2:
-                self.state = 209
+                self.state = 193
                 self.match(UVLParser.T__2)
-                self.state = 210
+                self.state = 194
                 self.match(UVLParser.WORD)
-                self.state = 215
+                self.state = 199
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1630,6 +1587,30 @@ class UVLParser ( Parser ):
             self.exitRule()
         return localctx
 
+
+
+    def sempred(self, localctx:RuleContext, ruleIndex:int, predIndex:int):
+        if self._predicates == None:
+            self._predicates = dict()
+        self._predicates[13] = self.constraint_sempred
+        pred = self._predicates.get(ruleIndex, None)
+        if pred is None:
+            raise Exception("No predicate with index:" + str(ruleIndex))
+        else:
+            return pred(localctx, predIndex)
+
+    def constraint_sempred(self, localctx:ConstraintContext, predIndex:int):
+            if predIndex == 0:
+                return self.precpred(self._ctx, 4)
+         
+
+            if predIndex == 1:
+                return self.precpred(self._ctx, 3)
+         
+
+            if predIndex == 2:
+                return self.precpred(self._ctx, 2)
+         
 
 
 

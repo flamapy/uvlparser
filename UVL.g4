@@ -41,7 +41,7 @@ features: 'features' INDENT child DEDENT;
 child: feature_spec (INDENT relation* (DEDENT | EOF ))?;
 relation: relation_spec (INDENT child* (DEDENT | EOF ))?;
 
-feature_spec: ref attributes? NL?;
+feature_spec: ref NL? attributes? NL?;
 ref: (WORD '.')* WORD;
 attributes: '{}' | '{' attribute (',' attribute)* '}';
 attribute: key ('"' value '"')?;
@@ -54,28 +54,32 @@ relation_spec: RELATION_WORD;
 constraints: 'constraints' INDENT (constraint NL?)* (DEDENT|EOF);
 
 constraint:
-	negation
-	| conjunction
-	| disjuction
-	| implication
-	| equivalence
-	| requires
-	| excludes;
+	'(' constraint ')'  # parenthesisExp
+	| NOT constraint  # notExp
+	| constraint AND constraint  # andExp
+	| constraint OR constraint  # orExp
+	| constraint logical_operator constraint  # logicalExp
+	| WORD  # term
+	;
 
-negation: '!' WORD;
-conjunction: WORD '&' WORD;
-disjuction: WORD '|' WORD;
-implication: WORD '=>' WORD;
-equivalence: WORD '<=>' WORD;
-requires: WORD 'requires' WORD;
-excludes: WORD 'excludes' WORD;
+NOT: '!';
+AND: '&';
+OR: '|';
+logical_operator: EQUIVALENCE  # equivExp
+				  | IMPLICATION  # impliesExp
+				  | REQUIRES  # requiresExp
+				  | EXCLUDES  # excludesExp;
+EQUIVALENCE:  '<=>';
+IMPLICATION: '=>';
+REQUIRES: 'requires';
+EXCLUDES: 'excludes';
 
 // imports blocK
 
 imports: 'imports' INDENT imp* DEDENT;
 
 imp: imp_spec ('as' WORD)? NL?;
-imp_spec: WORD '.' WORD ('.' WORD)*;
+imp_spec: WORD ('.' WORD)*;
 
 //lexer rules
 fragment INT: '0' | ([1-9][0-9]*);
