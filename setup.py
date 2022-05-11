@@ -22,5 +22,5 @@ setup(
     ],
     zip_safe=True,
     python_requires=">=3.0",
-    install_requires=["antlr4-python3-runtime==4.9.3"],
+    install_requires=["antlr4-python3-runtime==4.7.2"],
 )
