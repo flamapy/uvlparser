@@ -7,7 +7,7 @@ tokens {
 
 @lexer::header {
 from antlr_denter.DenterHelper import DenterHelper
-from UVLParser import UVLParser
+from uvlparser.UVLParser import UVLParser
 }
 @lexer::members {
 class UVLDenter(DenterHelper):

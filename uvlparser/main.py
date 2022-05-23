@@ -1,7 +1,6 @@
-import sys
-from antlr4 import *
-from .UVLLexer import UVLLexer
-from .UVLParser import UVLParser
+from antlr4 import CommonTokenStream, FileStream
+from uvlparser.UVLLexer import UVLLexer
+from uvlparser.UVLParser import UVLParser
 
 
 def get_tree(argv):
@@ -12,4 +11,3 @@ def get_tree(argv):
     tree = parser.feature_model()
 
     return tree
-
