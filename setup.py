@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="uvlparser",
-    version="0.8.7",
+    version="0.9.0.dev0",
     description="This module provides a get_tree function to obtain an ANTLR parse-tree from a UVL-defined feature model",
     long_description=long_description,
     long_description_content_type="text/markdown",
