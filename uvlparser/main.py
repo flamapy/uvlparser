@@ -6,6 +6,7 @@ from uvlparser.UVLParser import UVLParser
 def get_tree(argv):
     input_stream = FileStream(argv)
     lexer = UVLLexer(input_stream)
+    lexer.removeErrorListeners()
     stream = CommonTokenStream(lexer)
     parser = UVLParser(stream)
     tree = parser.feature_model()
