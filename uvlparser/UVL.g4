@@ -94,7 +94,7 @@ RELATION_WORD: (
 
 WORD: [a-zA-Z_0-9]+;
 BOOLEAN: 'true' | 'false';
-NUMBER: [+-]?(0|[1-9][0-9]*)('.')?([eE][+-]?[0-9+])?
+NUMBER: [+-]?('0'|[1-9][0-9]*)('.')?([eE][+-]?[0-9+])?;
 VECTOR: '[' ((BOOLEAN | NUMBER | WORD | VECTOR) (',')?)* ']';
 
 NL: ('\r'? '\n' ' '* | '\r'? '\n' '\t'*);
