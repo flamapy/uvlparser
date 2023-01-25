@@ -44,7 +44,7 @@ relation: relation_spec (INDENT child* (DEDENT | EOF ))?;
 feature_spec: ref NL? attributes? NL?;
 ref: (WORD '.')* WORD;
 attributes: '{}' | '{' attribute (',' attribute)* '}';
-attribute: key ('"' value '"')?;
+attribute: key ( value )?;
 key: WORD;
 value: (BOOLEAN | NUMBER | WORD | VECTOR);
 
