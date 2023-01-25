@@ -92,7 +92,7 @@ RELATION_WORD: (
 		| ('[' (INT '..')? (INT | '*') ']')
 	);
 
-WORD: [a-zA-Z][a-zA-Z0-9_]*;
+WORD: [a-zA-Z_0-9]+;
 BOOLEAN: 'true' | 'false';
 NUMBER: '0' | ([1-9][0-9]* ('.' [0-9]+)?);
 VECTOR: '[' ((BOOLEAN | NUMBER | WORD | VECTOR) (',')?)* ']';
