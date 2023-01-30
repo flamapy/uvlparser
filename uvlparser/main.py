@@ -9,6 +9,7 @@ def get_tree(argv):
     lexer.removeErrorListeners()
     stream = CommonTokenStream(lexer)
     parser = UVLParser(stream)
+    parser.removeErrorListeners()
     tree = parser.feature_model()
 
     return tree
