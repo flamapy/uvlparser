@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+uvlparser/__init__.py
+uvlparser/main.py
+uvlparser.egg-info/PKG-INFO
+uvlparser.egg-info/SOURCES.txt
+uvlparser.egg-info/dependency_links.txt
+uvlparser.egg-info/requires.txt
+uvlparser.egg-info/top_level.txt
+uvlparser.egg-info/zip-safe

@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setup(
     name="uvlparser",
-    version="0.9.0.dev0",
+    version="1.0.0",
     description="This module provides a get_tree function to obtain an ANTLR parse-tree from a UVL-defined feature model",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/diverso-lab/uvl-diverso",
-    author="Pablo Pazo Jiménez",
-    author_email="pablopazojim@gmail.com",
+    url="https://github.com/flamapy/uvlparser",
+    author="Flamapy",
+    author_email="flamapy@us.es",
     # To find more licenses or classifiers go to: https://pypi.org/classifiers/
     license="GNU General Public License v3 (GPLv3)",
     packages=['uvlparser'],
