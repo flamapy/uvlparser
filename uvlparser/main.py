@@ -10,8 +10,8 @@ class CustomErrorListener(ErrorListener):
             return
         else:
             # Otherwise, print the error (or handle it in another way)
-            print(f"Line {line}:{column} - {msg}")
-            raise ParsingException("The UVL has sintactic problems that prevents reading it")
+            print(f"The UVL has the following error that prevents reading it :Line {line}:{column} - {msg}")
+            raise ParsingException("")
             
 
 def get_tree(argv):
