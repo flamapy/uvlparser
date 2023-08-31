@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="uvlparser",
-    version="1.0.2",
+    version="1.1.0.dev0",
     description="This module provides a get_tree function to obtain an ANTLR parse-tree from a UVL-defined feature model",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -25,5 +25,6 @@ setup(
     install_requires=[
         "antlr4-python3-runtime==4.7.2",
         "antlr-denter==1.3.1",
+        "flamapy==1.1.3"
     ],
 )
