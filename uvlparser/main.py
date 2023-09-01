@@ -7,11 +7,11 @@ class CustomErrorListener(ErrorListener):
     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
         # If the error message contains a specific keyword related to tabulation, ignore it
         if "\\t" in msg:
+            print(f"The UVL has the following warning that prevents reading it :Line {line}:{column} - {msg}")
             return
         else:
             # Otherwise, print the error (or handle it in another way)
-            print(f"The UVL has the following error that prevents reading it :Line {line}:{column} - {msg}")
-            raise ParsingException("")
+            raise ParsingException(f"The UVL has the following error that prevents reading it :Line {line}:{column} - {msg}")
             
 
 def get_tree(argv):
