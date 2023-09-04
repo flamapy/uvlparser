@@ -5,97 +5,176 @@ tokens {
 	DEDENT
 }
 
-@lexer::header {
-from antlr_denter.DenterHelper import DenterHelper
-from uvlparser.UVLParser import UVLParser
-}
-@lexer::members {
-class UVLDenter(DenterHelper):
-    def __init__(self, lexer, nl_token, indent_token, dedent_token, ignore_eof):
-        super().__init__(nl_token, indent_token, dedent_token, ignore_eof)
-        self.lexer: UVLLexer = lexer
+featureModel: namespace? NEWLINE? includes? NEWLINE? imports? NEWLINE? features? NEWLINE? constraints? EOF;
 
-    def pull_token(self):
-        return super(UVLLexer, self.lexer).nextToken()
+includes: 'include' NEWLINE INDENT includeLine* DEDENT;
+includeLine: languageLevel NEWLINE;
 
-denter = None
+namespace: 'namespace' reference;
 
-def nextToken(self):
-    if not self.denter:
-        self.denter = self.UVLDenter(self, self.NL, UVLParser.INDENT, UVLParser.DEDENT, True)
-    return self.denter.next_token()
+imports: 'imports' NEWLINE INDENT importLine* DEDENT;
+importLine: ns=reference ('as' alias=reference)? NEWLINE;
 
-}
+features: 'features' NEWLINE INDENT feature DEDENT;
 
-// parser rules
-feature_model: namespace? imports? features constraints? EOF?;
+group
+    : ORGROUP groupSpec          # OrGroup
+    | ALTERNATIVE groupSpec # AlternativeGroup
+    | OPTIONAL groupSpec    # OptionalGroup
+    | MANDATORY groupSpec   # MandatoryGroup
+    | CARDINALITY groupSpec    # CardinalityGroup
+    ;
 
+groupSpec: NEWLINE INDENT feature+ DEDENT;
 
-//namespace
+feature: featureType? reference featureCardinality? attributes? NEWLINE (INDENT group+ DEDENT)?;
 
-namespace: 'namespace' WORD NL*;
+featureCardinality: 'cardinality' CARDINALITY;
 
-//features block
-features: 'features' INDENT child DEDENT;
+attributes: OPEN_BRACE (attribute (COMMA attribute)*)? CLOSE_BRACE;
 
-child: feature_spec (INDENT relation* (DEDENT | EOF ))?;
-relation: relation_spec (INDENT child* (DEDENT | EOF ))?;
+attribute
+    : valueAttribute
+    | constraintAttribute;
 
-feature_spec: ref NL? attributes? NL?;
-ref: (WORD '.')* WORD;
-attributes: '{}' | '{' attribute (',' attribute)* '}';
-attribute: key ( value )?;
-key: WORD;
-value: (BOOLEAN | NUMBER | WORD | VECTOR);
+valueAttribute: key value?;
 
-relation_spec: RELATION_WORD;
+key: identifier;
+value: BOOLEAN | FLOAT | INTEGER | STRING | attributes | vector;
+vector: OPEN_BRACK (value (COMMA value)*)? CLOSE_BRACK;
 
-//constraints block constraints block
-constraints: 'constraints' INDENT (constraint NL?)* (DEDENT|EOF);
+constraintAttribute
+    : 'constraint' constraint               # SingleConstraintAttribute
+    | 'constraints' constraintList          # ListConstraintAttribute
+    ;
+constraintList: OPEN_BRACK (constraint (COMMA constraint)*)? CLOSE_BRACK;
 
-constraint:
-	'(' constraint ')'  # parenthesisExp
-	| NOT constraint  # notExp
-	| constraint AND constraint  # andExp
-	| constraint OR constraint  # orExp
-	| constraint logical_operator constraint  # logicalExp
-	| WORD  # term
+constraints: 'constraints' NEWLINE INDENT constraintLine* DEDENT;
+
+constraintLine: constraint NEWLINE;
+
+constraint
+    : equation                              # EquationConstraint
+    | reference                             # LiteralConstraint
+    | OPEN_PAREN constraint CLOSE_PAREN     # ParenthesisConstraint
+    | NOT constraint                        # NotConstraint
+    | constraint AND constraint             # AndConstraint
+    | constraint OR constraint              # OrConstraint
+    | constraint IMPLICATION constraint     # ImplicationConstraint
+    | constraint EQUIVALENCE constraint     # EquivalenceConstraint
 	;
+
+equation
+    : expression EQUAL expression           # EqualEquation
+    | expression LOWER expression           # LowerEquation
+    | expression GREATER expression         # GreaterEquation
+    | expression LOWER_EQUALS expression    # LowerEqualsEquation
+    | expression GREATER_EQUALS expression  # GreaterEqualsEquation
+    | expression NOT_EQUALS expression      # NotEqualsEquation
+    ;
+
+expression:
+    FLOAT                                   # FloatLiteralExpression
+    | INTEGER                               # IntegerLiteralExpression
+    | STRING                                # StringLiteralExpression
+    | aggregateFunction                     # AggregateFunctionExpression
+    | reference                             # LiteralExpression
+    | OPEN_PAREN expression CLOSE_PAREN     # BracketExpression
+    | expression ADD expression             # AddExpression
+    | expression SUB expression             # SubExpression
+    | expression MUL expression             # MulExpression
+    | expression DIV expression             # DivExpression
+    ;
+
+aggregateFunction
+    : 'sum' OPEN_PAREN (reference COMMA)? reference CLOSE_PAREN    # SumAggregateFunction
+    | 'avg' OPEN_PAREN (reference COMMA)? reference CLOSE_PAREN    # AvgAggregateFunction
+    | stringAggregateFunction                                      # StringAggregateFunctionExpression
+    | numericAggregateFunction                                     # NumericAggregateFunctionExpression
+    ;
+
+stringAggregateFunction
+    : 'len' OPEN_PAREN reference CLOSE_PAREN        # LengthAggregateFunction
+    ;
+
+numericAggregateFunction
+    : 'floor' OPEN_PAREN reference CLOSE_PAREN      # FloorAggregateFunction
+    | 'ceil' OPEN_PAREN reference CLOSE_PAREN       # CeilAggregateFunction
+    ;
+
+reference: (identifier '.')* identifier;
+identifier: ID_STRICT | ID_NOT_STRICT;
+featureType: 'String' | 'Integer' | BOOLEAN_KEY | 'Real';
+
+
+
+languageLevel: majorLevel ('.' (minorLevel | '*'))?;
+majorLevel: BOOLEAN_KEY | 'Arithmetic' | 'Type';
+minorLevel: 'group-cardinality' | 'feature-cardinality' | 'aggregate-function' | 'string-constraints';
+
+ORGROUP: 'or';
+ALTERNATIVE: 'alternative';
+OPTIONAL: 'optional';
+MANDATORY: 'mandatory';
+CARDINALITY: OPEN_BRACK INTEGER ('..' (INTEGER | '*'))? CLOSE_BRACK;
 
 NOT: '!';
 AND: '&';
 OR: '|';
-logical_operator: EQUIVALENCE  # equivExp
-				  | IMPLICATION  # impliesExp
-				  | REQUIRES  # requiresExp
-				  | EXCLUDES  # excludesExp;
-EQUIVALENCE:  '<=>';
+EQUIVALENCE: '<=>';
 IMPLICATION: '=>';
-REQUIRES: 'requires';
-EXCLUDES: 'excludes';
 
-// imports blocK
+EQUAL: '==';
+LOWER: '<';
+LOWER_EQUALS: '<=';
+GREATER: '>';
+GREATER_EQUALS: '>=';
+NOT_EQUALS: '!=';
 
-imports: 'imports' INDENT imp* DEDENT;
+DIV: '/';
+MUL: '*';
+ADD: '+';
+SUB: '-';
 
-imp: imp_spec ('as' WORD)? NL?;
-imp_spec: WORD ('.' WORD)*;
-
-//lexer rules
-fragment INT: '0' | ([1-9][0-9]*);
-
-RELATION_WORD: (
-		'alternative'
-		| 'or'
-		| 'optional'
-		| 'mandatory'
-		| ('[' (INT '..')? (INT | '*') ']')
-	);
-
-WORD: [a-zA-Z_0-9\-]+;
+FLOAT: '-'?[0-9]*[.][0-9]+;
+INTEGER: '0' | '-'?[1-9][0-9]*;
 BOOLEAN: 'true' | 'false';
-NUMBER: [+-]?('0'|[1-9][0-9]*)('.')?([eE][+-]?[0-9+])?;
-VECTOR: '[' ((BOOLEAN | NUMBER | WORD | VECTOR) (',')?)* ']';
 
-NL: ('\r'? '\n' ' '* | '\r'? '\n' '\t'*);
-WS: [ ]+ -> skip;
+BOOLEAN_KEY : 'Boolean';
+
+COMMA: ',';
+
+OPEN_PAREN : '(' {this.opened += 1;};
+CLOSE_PAREN : ')' {this.opened -= 1;};
+OPEN_BRACK : '[' {this.opened += 1;};
+CLOSE_BRACK : ']' {this.opened -= 1;};
+OPEN_BRACE : '{' {this.opened += 1;};
+CLOSE_BRACE : '}' {this.opened -= 1;};
+OPEN_COMMENT: '/*' {this.opened += 1;};
+CLOSE_COMMENT: '*/' {this.opened -= 1;};
+
+ID_NOT_STRICT: '"'~[\r\n".]+'"';
+ID_STRICT: [a-zA-Z]([a-zA-Z0-9_] | '#' | '§' | '%' | '?' | '\\' | '\'' | 'ä' | 'ü' | 'ö' | 'ß' | ';')*;
+
+STRING: '\''~[\r\n'.]+'\'';
+
+NEWLINE
+ : ( {self.atStartOfInput()}?   SPACES
+   | ( '\r'? '\n' | '\r' ) SPACES?
+   )
+   {self.handleNewline() }
+   
+ ;
+
+SKIP_
+  : ( SPACES | COMMENT ) -> skip
+  ;
+
+ fragment COMMENT
+  : '//' ~[\r\n\f]*
+  | OPEN_COMMENT .*? CLOSE_COMMENT
+  ;
+
+  fragment SPACES
+   : [ \t]+
+   ;

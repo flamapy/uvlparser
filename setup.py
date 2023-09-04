@@ -24,7 +24,5 @@ setup(
     python_requires=">=3.0",
     install_requires=[
         "antlr4-python3-runtime==4.7.2",
-        "antlr-denter==1.3.1",
-        "flamapy==1.1.3"
     ],
 )

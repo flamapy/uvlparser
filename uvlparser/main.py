@@ -1,5 +1,5 @@
 from antlr4 import CommonTokenStream, FileStream
-from uvlparser.UVLLexer import UVLLexer
+from uvlparser.PythonUVLLexer import PythonUVLLexer
 from uvlparser.UVLParser import UVLParser
 from antlr4.error.ErrorListener import ErrorListener
 from flamapy.core.exceptions import ParsingException
@@ -16,7 +16,7 @@ class CustomErrorListener(ErrorListener):
 
 def get_tree(argv):
     input_stream = FileStream(argv)
-    lexer = UVLLexer(input_stream)
+    lexer = PythonUVLLexer(input_stream)
     
     # Attach the custom error listener to the lexer
     lexer.removeErrorListeners()
@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     # Parse the provided file
     input_stream = FileStream(sys.argv[1])
-    lexer = UVLLexer(input_stream)
+    lexer = PythonUVLLexer(input_stream)
     
     # Attach the custom error listener to the lexer
     lexer.removeErrorListeners()
@@ -57,6 +57,6 @@ if __name__ == "__main__":
     parser.removeErrorListeners()
     parser.addErrorListener(CustomErrorListener())
 
-    tree = parser.feature_model()
+    tree = parser.featureModel()
     # Print the parse tree (optional)
     print(tree.toStringTree(recog=parser))
