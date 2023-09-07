@@ -2,7 +2,7 @@ from antlr4 import CommonTokenStream, FileStream
 from uvlparser.PythonUVLLexer import PythonUVLLexer
 from uvlparser.UVLParser import UVLParser
 from antlr4.error.ErrorListener import ErrorListener
-from flamapy.core.exceptions import ParsingException
+
 class CustomErrorListener(ErrorListener):
     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
         # If the error message contains a specific keyword related to tabulation, ignore it
@@ -11,7 +11,7 @@ class CustomErrorListener(ErrorListener):
             return
         else:
             # Otherwise, print the error (or handle it in another way)
-            raise ParsingException(f"The UVL has the following error that prevents reading it :Line {line}:{column} - {msg}")
+            raise Exception(f"The UVL has the following error that prevents reading it :Line {line}:{column} - {msg}")
             
 
 def get_tree(argv):

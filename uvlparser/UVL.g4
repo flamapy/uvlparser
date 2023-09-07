@@ -1,9 +1,8 @@
 grammar UVL;
 
-tokens {
-	INDENT,
-	DEDENT
-}
+
+INDENT : '<INDENT>'; // this pattern should never match in actual input
+DEDENT : '<DEDENT>'; // this pattern should also never match
 
 featureModel: namespace? NEWLINE? includes? NEWLINE? imports? NEWLINE? features? NEWLINE? constraints? EOF;
 
@@ -163,7 +162,7 @@ NEWLINE
    | ( '\r'? '\n' | '\r' ) SPACES?
    )
    {self.handleNewline() }
-   
+
  ;
 
 SKIP_
