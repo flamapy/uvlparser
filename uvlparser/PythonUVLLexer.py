@@ -5,17 +5,13 @@ from antlr4.Token import CommonToken
 
 class PythonUVLLexer(UVLLexer):
    
-   
     def __init__(self, input_stream):
         super().__init__(input_stream)
         self.tokens = []
         self.indents = []
         self.opened = 0
         self.lastToken = None
-        print(self.)
         
-        
-
     def nextToken(self):
         # Check if the end-of-file is ahead and there are still some DEDENTS expected.
         if self._input.LA(1) == Token.EOF and len(self.indents) != 0:
@@ -23,7 +19,7 @@ class PythonUVLLexer(UVLLexer):
             self.tokens = [t for t in self.tokens if t.type != Token.EOF]
 
             # First emit an extra line break that serves as the end of the statement.
-            self.emit(self.commonToken(self.NEWLINE, "\n"))
+            self.emit(self.commonToken(self.NEWLINE, "\r\n"))
 
             # Now emit as much DEDENT tokens as needed.
             while len(self.indents) != 0:
@@ -49,7 +45,7 @@ class PythonUVLLexer(UVLLexer):
     def commonToken(self, type, text):
         stop = self.getCharIndex() - 1
         start = stop - len(text) + 1 if text else stop
-        return CommonToken(self._tokenFactorySourcePair, type, Token.DEFAULT_CHANNEL , start, stop)
+        return CommonToken(self._tokenFactorySourcePair, type, Token.DEFAULT_CHANNEL, start, stop)
 
     @staticmethod
     def getIndentationCount(spaces):
@@ -60,6 +56,9 @@ class PythonUVLLexer(UVLLexer):
             else:  # A normal space char.
                 count += 1
         return count
+    
+    def skipToken(self):
+        self.skip()
 
     def atStartOfInput(self):
         return self._interp.column == 0 and self._interp.line == 1
@@ -80,7 +79,7 @@ class PythonUVLLexer(UVLLexer):
           self.emit()
           indent = self.getIndentationCount(spaces)
           previous = self.indents[-1] if self.indents else 0
-
+'''
           if indent == previous:
               # Skip indents of the same size as the present indent-size.
               self.skipToken()
@@ -94,4 +93,4 @@ class PythonUVLLexer(UVLLexer):
               while self.indents and self.indents[-1] > indent:
                   self.emit(self.createDedent())
                   self.indents.pop()
-
+'''
