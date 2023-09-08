@@ -12,6 +12,12 @@ class PythonUVLLexer(UVLLexer):
         self.opened = 0
         self.lastToken = None
         
+    
+    def emit(self,t:Token):
+        super.setToken(t)
+        self.tokens.offer(t)
+    
+    
     def nextToken(self):
         # Check if the end-of-file is ahead and there are still some DEDENTS expected.
         if self._input.LA(1) == Token.EOF and len(self.indents) != 0:
@@ -79,7 +85,7 @@ class PythonUVLLexer(UVLLexer):
           self.emit()
           indent = self.getIndentationCount(spaces)
           previous = self.indents[-1] if self.indents else 0
-'''
+
           if indent == previous:
               # Skip indents of the same size as the present indent-size.
               self.skipToken()
@@ -93,4 +99,3 @@ class PythonUVLLexer(UVLLexer):
               while self.indents and self.indents[-1] > indent:
                   self.emit(self.createDedent())
                   self.indents.pop()
-'''
